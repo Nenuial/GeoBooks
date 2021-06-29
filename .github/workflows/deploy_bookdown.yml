@@ -1,0 +1,82 @@
+on:
+  push:
+     tags:
+       - v*
+
+env:
+  RENV_PATHS_ROOT: ~/.local/share/renv
+
+name: Geo-Books
+
+jobs:
+  geo-books:
+    name: Render GeoBooks
+    runs-on: macOS-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: r-lib/actions/setup-r@v1
+      - uses: r-lib/actions/setup-pandoc@v1
+        with:
+          pandoc-version: '2.11.2'
+
+      - name: Install TinyTeX
+        uses: r-lib/actions/setup-tinytex@v1
+        env:
+          # install full prebuilt version
+          TINYTEX_INSTALLER: TinyTeX
+
+      - name: Install OS dependencies
+        run: |
+          brew update
+          brew install --cask xquartz
+          brew install --cask calibre
+
+
+      - name: Adding GITHUB PAT
+        run: echo "${{ secrets.R_GITHUB_PAT }}" >> ~/.renviron
+
+      - name: Adding IBD API KEY
+        run: echo "${{ secrets.R_IDB_API }}" >> ~/.renviron
+
+      - name: Adding RNOAA API KEY
+        run: echo "${{ secrets.R_NOAA_KEY }}" >> ~/.rprofile
+
+      - name: Cache packages
+        uses: actions/cache@v1
+        with:
+          path: ${{ env.RENV_PATHS_ROOT }}
+          key: ${{ runner.os }}-renv-${{ hashFiles('**/renv.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-renv-
+
+      - name: Restore packages
+        shell: Rscript {0}
+        run: |
+          if (!requireNamespace("renv", quietly = TRUE)) install.packages("renv")
+          renv::restore()
+
+      - name: Install FiraSans and FiraMath
+        run: Rscript -e 'geovizr::gvz_install_fonts_macos(system_wide = TRUE)'
+
+
+      - name: Build GuideTM
+        run: make -C inst/GuideTM all
+
+      - name: Build GeoDFen
+        run: make -C inst/GeoDFen all
+
+
+      - name: Install SSH Key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          known_hosts: 'placeholder'
+
+      - name: Adding Known Hosts
+        run: ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+
+      - name: Deploy GuideTM with rsync
+        run: rsync -avz ./inst/GuideTM/_book/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/var/www/geo/guidetm
+
+      - name: Deploy GeoDFen with rsync
+        run: rsync -avz ./inst/GeoDFen/_book/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/var/www/geo/geodfen

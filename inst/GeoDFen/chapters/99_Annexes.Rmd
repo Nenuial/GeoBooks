@@ -1,0 +1,38 @@
+`r if (knitr::is_html_output()) '<!--'`
+
+# (PART) Annexes {-}
+
+`r geovizr::chapter_image("../Resources/pictures/General/0-biblio")`
+# Illustrations {.unnumbered}
+
+## Source of the illustrations {.unnumbered}
+
+The cover illustration comes from [Wikipedia Commons](https://commons.wikimedia.org/wiki/Atlas_of_the_World/Geological#/media/File:Whole_world_-_land_and_oceans_12000.jpg) and that of the contents from [Youtube](https://www.youtube.com/watch?v=gKVIWyj2QnU). The generic references illustration comes from [Wikipedia Commons](https://commons.wikimedia.org/wiki/File:Old_book_bindings.jpg) and that for the index from [pixabay](https://pixabay.com/en/map-finger-pointing-hand-926469/).
+
+All chapter illustrations are free of use. Below the list of sources for the chapter headings.
+
+1. [Wikipedia Commons](https://commons.wikimedia.org/wiki/File:Mappa_di_Eratostene.jpg)
+2. [WordItOut (original image)](http://worditout.com)
+3. [NASA](http://forums.nasioc.com/forums/showthread.php?t=1793345)
+4. [Wikipedia Commons](https://commons.wikimedia.org/wiki/File:1920_census_Kennedy_Carr.gif)
+5. [Wikipedia Commons](https://commons.wikimedia.org/wiki/File:2010_G20_Toronto_(2).jpg)
+6. [Alexa Tsintolas](http://alexatsintolas.weebly.com/propaganda.html)
+7. [Wikipedia Commons](https://commons.wikimedia.org/wiki/File:Schematic_diagram_of_the_history_of_the_Universe.jpg)
+8. [Wikipedia Commons](https://commons.wikimedia.org/wiki/File:Size_planets_comparison.jpg)
+9. [Wikipedia Commons](https://commons.wikimedia.org/wiki/File:Aurora_borealis_above_Lyngenfjorden,_2012_March.jpg)
+10. [Wikipedia Commons](https://commons.wikimedia.org/wiki/File:Composizione_geometrica_chiamata_mappa_di_Bedolina_-_Bedolina_R_1_-_Capo_di_Ponte_(Foto_Luca_Giarelli).jpg)
+11. [Wikipedia Commons](https://commons.wikimedia.org/wiki/File:1838_Bradford_Map_of_the_World_on_Polar_Projection_(_Northern_and_Southern_Hemispheres_)_-_Geographicus_-_NorthernHemisphere-bradford-1838.jpg)
+12. [SwissTopo](https://map.geo.admin.ch/?lang=en&topic=ech&bgLayer=ch.swisstopo.pixelkarte-farbe&layers=ch.swisstopo.zeitreihen,ch.bfs.gebaeude_wohnungs_register,ch.bav.haltestellen-oev,ch.swisstopo.swisstlm3d-wanderwege,ch.astra.wanderland-sperrungen_umleitungen,ch.swisstopo.hiks-siegfried&layers_opacity=1,1,1,0.8,0.8,1&layers_visibility=false,false,false,false,false,true&layers_timestamp=18641231,,,,,&E=2562077.54&N=1204466.76&zoom=8)
+13. [Wikipedia Commons](https://commons.wikimedia.org/wiki/File:Thunderstorms_over_the_Pacific_seen_from_Earth_orbit_on_STS-64.jpg)
+14. [PX Here](https://pxhere.com/fr/photo/528230)
+15. Original image
+
+`r if (knitr::is_html_output()) '-->'`
+
+`r if (knitr::is_latex_output()) '<!--'`
+
+# (PART) Annexes {-}
+
+# References {.unnumbered}
+
+`r if (knitr::is_latex_output()) '-->'`

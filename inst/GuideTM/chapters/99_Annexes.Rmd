@@ -1,0 +1,54 @@
+# (PART) Annexes {-}
+
+# Échéances
+
+Les échéances suivantes sont à respecter pour le bon déroulement du TM:
+
+```{r echeances, echo=FALSE}
+tibble::tribble(
+  ~"Échéance",                   ~" ",
+  deadline$first_review,         "**Premier bilan**: bibliographie et problématique",
+  deadline$preliminary_version,  "Version préliminaire du TM",
+  deadline$complete_version,     "Version *complète* du TM (avec titre)",
+  deadline$second_review,        "**Second bilan et titre définitif**",
+  deadline$final_version,        "**Version finale du TM**",
+  deadline$reddition,            "**Reddition version finale**"
+) |> 
+  gt::gt() |> 
+  gt::fmt_markdown(columns = gt::everything()) |> 
+  gt::tab_options(
+    table.width = gt::pct(100),
+    column_labels.hidden = TRUE
+  )
+```
+
+# Soutenance
+
+La soutenance dure 15 minutes. Elle se divise en général en deux parties. Dans la première partie, l'étudiant présente son travail et apporte une réflexion critique par rapport aux méthodes utilisées et aux résultats présentés. Quelles ont été les difficultés ? Procèderait-on de la même façon s'il fallait recommencer ? Quelles sont les limites du travail ? etc… Dans la seconde partie, le mentor et l'expert poseront quelques questions par rapport au travail réalisé.
+
+Il n'est pas inutile de relire son TM quelques jours avant la soutenance. Gardez un esprit critique lors de cette relecture. Demandez-vous quelles sont les forces et les faiblesses du travail.
+
+# Évaluation
+
+L'évaluation du travail de maturité se base sur une grille d'évaluation (voir pages suivantes). Les critères sont qualitatifs et n'ont pas de pondération précise.
+
+Dans la section B, seule la partie B.2 est évaluée pour les TM de recherche en géographie.
+
+\newpage
+
+```{r, out.width="100%"}
+knitr::include_graphics("documents/grille1.png", auto_pdf = TRUE)
+```
+
+\newpage
+
+```{r, out.width="100%"}
+knitr::include_graphics("documents/grille2.png", auto_pdf = TRUE)
+```
+
+
+`r if (knitr::is_latex_output()) '<!--'`
+
+# Références {-}
+
+`r if (knitr::is_latex_output()) '-->'`

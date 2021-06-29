@@ -1,0 +1,175 @@
+---
+nocite: |
+  @beguin_representation_2017
+  @morange_les_2016
+  @fragniere_comment_2016
+  @lddr_directives_2018
+  @lddr_guide_2018
+---
+
+\nocite{beguin_representation_2017}
+\nocite{morange_les_2016}
+\nocite{fragniere_comment_2016}
+\nocite{lddr_directives_2018}
+\nocite{lddr_guide_2018}
+
+# (PART) Mise en page et structure {-}
+
+# Forme du travail
+
+## La mise en page
+
+Votre travail de maturité est le fruit de nombreuses heures de recherche, compilation, rédaction, et bien d'autres tâches encore. Le résultat de ce travail conséquent mérite d'être mis en valeur. Ce n'est pas parce que le contenu est excellent que la forme peut être négligée. Le but de ce chapitre est de rappeler les règles d'usages pour la présentation d'un TM.  
+
+## Le format
+
+Le TM est présenté au format <span style="font-variant:small-caps;">A4</span>. Il est habituel de prévoir des marges de 2 à 3cm. Comme indiqué dans les *Directives de présentation du travail de maturité* : "une marge de reliure doit être prévue à gauche". Cela signifie que la marge gauche du travail est environ 0.5 cm plus large que celle de droite pour tenir compte de la reliure du travail.
+
+### La numérotation des pages
+Les pages du TM doivent être numérotées à l'exception de la page de titre et de la table des matières. Les numéros de pages sont placés en bas à droite ou au centre de la page.
+
+### Les styles
+
+L'utilisation des styles dans <span style="font-variant:small-caps;">Microsoft Word</span> pour la rédaction d'un document de l'envergure du TM est essentielle. Les styles permettent une mise en page uniforme tout au long du document. Ils permettent également la création d'une table des matières automatique.
+
+## Les titres et sous-titres
+
+Les titres et sous-titres reflètent l'organisation logique du TM. Le niveau du titre (titre, sous-titre, sous-sous-titre, etc.) est reflété dans sa présentation (taille de la police de caractère, gras, italique, etc.).
+
+Tous les titres de premier niveau (exemples: Introduction, Problématique, Conclusion, Bibliographie, etc.) commencent sur une nouvelle page. Les styles proposent une option qui automatise ce comportement.
+
+Un espace suffisant (environ 12pt) est prévu avant et après les titres. L'espace avant est toujours supérieur à l'espace après. En fonction du niveau de titre, cet espace peut être plus important.
+
+
+## Les paragraphes
+
+Les paragraphes permettent de refléter l'organisation logique de la pensée. Chaque paragraphe présente une idée, un concept. La division du texte en paragraphes permet de faciliter la lecture.
+
+Les paragraphes sont justifiés. On sépare les paragraphes par un espace d'environ 6pt. La première ligne d'un paragraphe peut-être indentée, mais il ne s'agit pas d'une obligation.
+
+## Les figures et tableaux
+
+Les figures et les tableaux permettent d'illustrer (au sens large du terme) les propos du texte. Ces "illustrations" sont là pour appuyer un argument. Si le texte ne fait pas référence à une illustration, il faut se poser la question de l'utilité de celle-ci.
+
+Avec les moyens de recherches modernes, il est aisé de trouver une illustration pour presque n'importe quel mot-clé. Portez une attention particulièrement aux images réalisées par des tiers. Posez-vous les questions suivantes:
+
+- Suis-je incapable de faire cette illustration moi-même ?
+- Cette illustration est-elle d'une qualité (résolution) suffisante pour l'impression ?
+- Suis-je en mesure d'expliquer le contenu de l'illustration
+
+Dans le TM, chaque figure ou tableau est numéroté et accompagné d'une brève légende avec une éventuelle référence à la source. Portez une attention particulière à la mise en forme de vos tableaux: celle-ci doit être uniforme et cohérente.
+
+## Les règles typographiques
+
+### La police de caractères
+
+Le choix de la police de caractères du TM est libre. Des options *standards* sont <span style="font-variant:small-caps;">Arial</span> 12pt et <span style="font-variant:small-caps;">Times New Roman</span> 14pt. Choisissez une police de caractères qui vous plaise, mais évitez les aspects trop exotiques!
+
+### Les espacements
+
+Il existe des règles d'usage dans chaque langue concernant l'espacement. <span style="font-variant:small-caps;">Microsoft Word</span> insert, en principe, les bonnes espaces en fonction du signe de ponctuation utilisé. La table \@ref(tab:punctuation-table) résume les espaces à utiliser pour les principaux signes de ponctuation.
+
+Il existe trois types d'espaces différentes : l'espace sécable, l'espace insécable et l'espace fine. L'espace sécable est une espace qui peut être coupée en fin de ligne. L'espace insécable est une espace qui ne peut être divisée en fin de ligne. Sous *Windows* l'espace insécable s'obtient par la combinaison de touches *Alt + 255* et sous <span style="font-variant:small-caps;">Mac OS X</span> la combinaison est *Alt (option) + barre d'espacement*. L'espace fine est une espace insécable plus étroite. <span style="font-variant:small-caps;">Microsoft Word</span> ne connait pas cette espace et on la remplace généralement par une espace insécable.
+
+```{r punctuation-table, echo=FALSE}
+tibble::tribble(
+  ~"Signe de ponctuation",      ~" ",   ~"espace avant",  ~"espace après",
+  "Point",                      ".",   "aucun",          "sécable",
+	"Point d'exclamation",        "!",   "fine",           "sécable",
+	"Point d'interrogation",      "?",   "fine",           "sécable",
+	"Point de suspension",        "…",   "aucune",         "sécable",
+	"Virgule",                    ",",   "aucune",         "sécable",
+	"Point virgule",              ";",   "insécable",      "sécable",
+	"Deux points",                ":",   "fine",           "sécable",
+	"Trait d'union",              "−",   "aucune",         "aucune",
+	"Tiret",                      "--",  "sécable",        "sécable",
+	"Guillemet ouvrant",          "«",   "sécable",        "fine",
+	"Guillemet fermant",          "»",   "fine",           "sécable",
+	"Guillemet anglais ouvrant",  "“",   "sécable",        "aucune",
+	"Guillemet anglais fermant",  "”",   "aucune",         "sécable") |> 
+  kableExtra::kbl(caption = "Règles pour les espaces", booktabs = T, linesep = "") |> 
+  kableExtra::row_spec(c(4, 7, 9), hline_after = TRUE)
+```
+
+### Les notes de bas de page
+
+Les notes de bas de page permettent de préciser un terme ou une idée. Dans le cadre du TM, on utilise également les notes de bas de page pour indiquer les références des sources utilisées.
+
+Les notes de bas de page se placent avant tous signes de ponctuation. Donc à la fin d'une phrase la note se place avant le point final!
+
+## La touche personnelle
+
+Les *Directives de présentation du travail de maturité* offrent une large latitude en ce qui concerne la mise en forme du travail de maturité. Chacun doit se sentir libre d'apporter sa touche personnelle, que ce soit avec un choix de police de caractère sensiblement différent ou une mise en forme des titres et sous-titres particulière par exemple.
+
+
+# Structure du travail
+
+## Les chapitres
+
+Le travail de maturité est organisé par chapitre. Cette structure permet d'organiser la réflexion qui anime le TM. Chaque chapitre peut être subdivisé en plusieurs sous-chapitres lorsque cela s'avère nécessaire. De même les sous-chapitres peuvent également être subdivisés. Une structure avec plus de trois niveaux n'est cependant pas recommandée pour un travail de l'envergure du TM.
+
+Le TM contiendra, en plus des annexes, au minimum les chapitres suivants:
+
+### L'introduction
+
+L'introduction expose le contexte général du TM. L'introduction permet de défendre le choix du sujet et d'expliquer ses motivations personnelles. On y trouve également un bref résumé des points essentiels qui seront traités dans le TM (sous forme de table des matières commentée par exemple).
+
+La majeure partie de l'introduction se rédige une fois que le contenu du TM est bien avancé. Il est impossible de résumer les points essentiels du TM avant que celui-ci ne soit rédigé!
+
+### Corps du travail
+
+Cette partie du TM est en général divisée en plusieurs chapitres en fonction de la recherche effectuée. Elle contient par exemple:
+
+- une argumentation de la problématique, appuyée par des sources externes;
+- la méthodologie employée dans le cadre du travail;
+- les résultats des différentes recherches effectuées;
+- un commentaire des résultats en rapport avec les questions soulevées au départ.
+
+### La problématique
+
+La problématique est la première section de votre TM. On peut parfois intégrer la problématique à l'introduction. La problématique est la première partie que vous allez rédiger. Une bonne problématique permet de comprendre le contexte de la recherche qui va suivre. Elle expose le *problème* qui sera traité dans le TM et permet de comprendre le cheminement qui a mené à la *question de recherche*.
+
+La question de recherche peut être divisée en plusieurs sous questions. Cet ensemble de question fixe le cadre de la recherche. C'est à ces questions là que vous allez chercher à répondre dans le cadre de votre recherche.
+
+### La méthodologie
+
+Cette section explique les différentes méthodes utilisées pour répondre aux questions de recherche. Ces méthodes peuvent être qualitatives ou quantitatives (voir section \@ref(methodes)).
+
+### La conclusion
+
+Dernière section du TM, la conclusion résume les différents résultats. Elle présente un bilan critique par rapport aux questions de recherche soulevées.
+
+Comme pour l'introduction, la conclusion se rédige une fois que le TM est terminé.
+
+## La page de titre
+
+La page de titre mérite une attention toute particulière. La page de titre est le premier élément que le lecteur du TM découvre. Le titre du TM doit figurer de façon évidente et informer le lecteur sur le contenu attendu. Ce titre doit correspondre au titre officiel enregistré pour le TM auprès du secrétariat du Lycée. Un sous-titre peut compléter le titre si nécessaire. Finalement, une illustration peut servir de point d'accroche sur la page de titre.
+
+En plus des éléments évoqués, les points suivants doivent impérativement figurer sur la page de titre (cf. *Directives de présentation du travail de maturité*):
+
+- nom du lycée
+- année scolaire
+- titre du TM
+- nom, prénom et classe de l'élève
+- nom et prénom du mentor
+
+## La table des matières
+La table des matières constitue un élément essentiel du travail de maturité. Elle figure au début du travail et permet de se faire une idée globale de la structure. La table des matières reflète l'organisation logique des chapitres du travail. Elle permet également de retrouver facilement une section précise. L'utilisation des styles permet la création automatique d'une table des matières.
+
+## La bibliographie
+
+La bibliographie est la première annexe du TM. Elle répertorie toutes les sources employées lors de la rédaction du travail. La bibliographie peut être subdivisée en plusieurs sections logiques (par ex. Livres, Articles, Sites internet) chaque section répertoriant les différents éléments par auteur et dans l'ordre alphabétique.
+
+Une mise en page suspendue (retrait négatif de la première ligne) est souhaitable pour faciliter la recherche des auteurs (voir section *Références*).
+
+Les consignes concernant la mise en forme des références bibliographiques se trouvent dans les *Directives de présentation du travail de maturité*.
+
+## Les annexes
+
+En plus de la bibliographie, le TM peut être complété par différentes annexes. Par exemple:
+
+- un glossaire;
+- un résumé des faits historiques;
+- une grille d'entretien ainsi qu'une transcription de l'entretien; 
+- des illustrations qu'on n’a pas souhaité insérer dans le corps du texte, mais qui viennent compléter le travail;
+- etc.

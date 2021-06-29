@@ -1,0 +1,5 @@
+_bookdown_files
+_book
+packages.bib
+*.log
+*.ptc

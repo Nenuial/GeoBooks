@@ -1,0 +1,245 @@
+## ---- cosmo-seasons ----
+
+\begin{tikzpicture}[dot/.style={draw,fill,circle,inner sep=1pt}]
+	\tikzstyle{keydates} = [black];
+	\def\angle{30} % angle at which X is placed
+	\def\a{5} % large half axis
+	\def\b{3} % small half axis
+	\def\ellipse{(0,0) ellipse ({\a} and {\b})}
+	
+	\def\transj{\trad{days}{jours}}
+	\coordinate (O) at (0,0);
+	
+	\begin{scope}[rotate=\angle]
+		\node (F) at (2,0) {};	
+	\end{scope}
+	
+	\foreach \corner in {(5,4), (-5,-4)}
+	{
+		\begin{scope}
+			\clip (F) rectangle \corner;
+			\fill[red!10!white, rotate=\angle] \ellipse;
+		\end{scope}
+	}
+	\foreach \corner in {(-5,4), (5,-4)}
+	{
+		\begin{scope}
+			\clip (F) rectangle \corner;
+			\fill[green!10!white, rotate=\angle] \ellipse;
+		\end{scope}
+	}
+	
+	\draw[name path=ellipse, rotate=\angle] \ellipse;
+	
+	\begin{scope}[rotate=\angle]
+		\node[rotate=-20,anchor=north,align=center] at (27:\a{} and \b) {\small \trad{winter}{hiver}\\\small 89 \transj};
+		\node[rotate=22,anchor=north,align=center] at (75:\a{} and \b) {\small \trad{spring}{printemps}\\\small 92.8 \transj};
+		\node[rotate=5,anchor=south west,align=center] at (220:\a{} and \b) {\small 93.6 \transj\\\small \trad{summer}{été}};
+		\node[rotate=47,anchor=south east,align=center] at (310:\a{} and \b) {\small 89.8 \transj\\\small \trad{autumn}{automne}};
+	\end{scope}
+	
+	\path[name path=equinox] (F |- 0,-4) -- (F |- 0,4);
+	\path[name path=solstice] (-5,0 |- F) -- (5,0 |- F);
+	\path[name path=apside] (\angle:5) -- (180+\angle:5);
+	
+	\draw[red,thick,name intersections={of=ellipse and solstice,by={summer,winter}}] (summer) -- (winter);
+	\draw[green,thick,name intersections={of=ellipse and equinox,by={spring,autumn}}] (spring) -- (autumn);
+	\draw[blue,thick,name intersections={of=ellipse and apside,by={periapse,apoapse}}] (periapse) -- (apoapse);
+		
+	\node (sun) at (F) {\includegraphics[width=1.6cm]{pictures/Cosmology/diagrams/sun_low}};
+	
+	\foreach \season in {winter, spring, summer, autumn, periapse, apoapse}
+	{
+		\begin{scope}[shift=(\season)]
+			\draw[red,thick] (90-23.5:.7cm) -- (270-23.5:.7cm);
+			\node[rotate=-23.5] at (0,0) {\includegraphics[width=1.2cm]{pictures/Cosmology/diagrams/earth_low}};
+		\end{scope}
+	}
+
+	\node[keydates,right=.62cm,align=center] at (winter) {\small \trad{Winter solstice}{Solstice d'hiver}\\\small 21 \trad{December}{décembre}};
+	\node[keydates,above=.62cm,right=.62cm,align=center] at (periapse) {\small Periapse\\\small 6 \trad{January}{janvier}};
+	\node[keydates,above=.62cm,align=center] at (spring) {\small \trad{Spring equinox}{Equinoxe de printemps}\\\small 21 \trad{March}{mars}};
+	\node[keydates,left=.62cm,align=center] at (summer) {\small \trad{Summer solstice}{Solstice d'été}\\\small 21 \trad{June}{juin}};
+	\node[keydates,below=.62cm,left=.62cm,align=center] at (apoapse) {\small Apoapse\\\small 6 \trad{July}{juillet}};
+	\node[keydates,below=.62cm,right=.4cm,anchor=north west,align=center] at (autumn) {\small \trad{Autumn equinox}{Equinoxe d'automne}\\\small 21 \trad{September}{septembre}};
+\end{tikzpicture}
+
+## ---- cosmo-summer-solstice ----
+
+\begin{tikzpicture}[scale=2]
+\coordinate (O) at (0,0);
+\coordinate (EN) at (0,2);
+\coordinate (ES) at (0,-2);
+\coordinate (EE) at (2,0);
+\coordinate (EW) at (-2,0);
+
+\coordinate (N) at (113.5:1.6cm);
+\coordinate (S) at (293.5:1.6cm);
+\coordinate (E) at (23.5:1.5cm);
+\coordinate (W) at (203.5:1.5cm);
+
+\coordinate (TNE) at (47:1.5cm);
+\coordinate (TNW) at (180:1.5cm);
+\coordinate (TSE) at (0:1.5cm);
+\coordinate (TSW) at (227:1.5cm);
+
+\coordinate (PNE) at (90:1.5cm);
+\coordinate (PNW) at (137:1.5cm);
+\coordinate (PSE) at (317:1.5cm);
+\coordinate (PSW) at (270:1.5cm);
+
+\draw[fill=white,path picture={
+               \node[rotate=23.5] at (0,0){
+                   \includegraphics[width=6cm]{pictures/Cosmology/diagrams/blackmarble}
+               };}] (0,1.5) arc [start angle=90, end angle=-90, radius=1.5cm];
+
+\draw[fill=white,path picture={
+               \node[rotate=23.5] at (0,0){
+                   \includegraphics[width=6cm]{pictures/Cosmology/diagrams/bluemarble}
+               };}] (0,1.5) arc [start angle=90, end angle=270, radius=1.5cm];
+
+\draw[black] pic [draw=black, fill=gray!20, angle radius=10mm, text=black,
+		"\tiny $\alpha$"] {angle = EN--O--N};
+\draw[gray] (EW) -- (EE) node[pos=1,anchor=west] {\small \trad{ecliptic}{ecliptique}};
+\draw[gray] (ES) -- (EN);
+\draw (0,0) circle [radius=1.5cm];
+\node[anchor=north east] at (0,-1.5) {\small $\alpha = 23.5^\circ$};
+
+\draw[red,thick] (N) node[left=3pt,above=1pt] {N} -- (S) node[right=3pt,below=1pt] {S};
+\draw[red,thick] (E) -- (W) node[pos=0.05,anchor=north east,inner sep=0.5pt,sloped] {\small \trad{equator}{équateur}};
+
+\draw[green,thick] (TNE) -- (TNW) node[pos=0.05,anchor=north east,inner sep=0.5pt,sloped] {\small cancer};
+\draw[green,thick] (TSE) -- (TSW) node[pos=0.05,anchor=north east,inner sep=0.5pt,sloped] {\small \trad{capricorn}{capricorne}};
+
+\draw[blue!20!white,thick] (PNE) -- (PNW) node[pos=0.5,anchor=north,inner sep=0.5pt,sloped] {\small \trad{polar circle}{~cercle polaire}};
+\draw[blue!20!white,thick] (PSE) -- (PSW) node[pos=0.5,anchor=south,inner sep=0.5pt,sloped] {\small \trad{polar circle}{~cercle polaire}};
+
+\draw (-1.65,0) -- (-1.65,0 |- 185:1.5) -- (185:1.5);
+\draw[fill=black] (-1.57,0 |- 182.5:1.5) circle [radius=.1mm];
+\draw[yellow,thick,out=-75,in=75,fill=yellow] (-4.5,2) to (-4.5,-2);
+\draw[yellow,thick] (-4.5,0 |- TSW) -- (TSW);
+\draw[yellow,thick] (-4.5,0 |- PSW) -- (PSW);
+\draw[yellow,thick] (-4.5,0 |- W) -- (W);
+\draw[yellow,thick] (-4.5,0 |- TNW) -- (TNW);
+\draw[yellow,thick] (-4.5,0 |- PNW) -- (PNW);
+
+\end{tikzpicture}
+
+## ---- cosmo-winter-solstice ----
+
+\begin{tikzpicture}[scale=2]
+\coordinate (O) at (0,0);
+\coordinate (EN) at (0,2);
+\coordinate (ES) at (0,-2);
+\coordinate (EE) at (2,0);
+\coordinate (EW) at (-2,0);
+
+\coordinate (N) at (66.5:1.7cm);
+\coordinate (S) at (246.5:1.7cm);
+\coordinate (E) at (336.5:1.5cm);
+\coordinate (W) at (156.5:1.5cm);
+
+\coordinate (TNE) at (0:1.5cm);
+\coordinate (TNW) at (133:1.5cm);
+\coordinate (TSE) at (313:1.5cm);
+\coordinate (TSW) at (180:1.5cm);
+
+\coordinate (PNE) at (43:1.5cm);
+\coordinate (PNW) at (90:1.5cm);
+\coordinate (PSE) at (270:1.5cm);
+\coordinate (PSW) at (223:1.5cm);
+
+\draw[fill=white,path picture={
+               \node[rotate=-23.5] at (0,0){
+                   \includegraphics[width=6cm]{pictures/Cosmology/diagrams/blackmarble}
+               };}] (0,1.5) arc [start angle=90, end angle=-90, radius=1.5cm];
+
+\draw[fill=white,path picture={
+               \node[rotate=-23.5] at (0,0){
+                   \includegraphics[width=6cm]{pictures/Cosmology/diagrams/bluemarble}
+               };}] (0,1.5) arc [start angle=90, end angle=270, radius=1.5cm];
+               
+\draw[black] pic [draw=black, fill=gray!20, angle radius=10mm, text=black,
+		"\tiny $\alpha$"] {angle = N--O--EN};
+\draw[gray] (EW) -- (EE) node[pos=1,anchor=west] {\small \trad{ecliptic}{ecliptique}};
+\draw[gray] (ES) -- (EN);
+\draw (0,0) circle [radius=1.5cm];
+\node[anchor=north west] at (0,-1.5) {\small $\alpha = 23.5^\circ$};
+
+\draw[red,thick] (N) node[right=3pt,above=1pt] {N} -- (S) node[left=3pt,below=1pt] {S};
+\draw[red,thick] (E) -- (W) node[pos=0.05,anchor=south east,inner sep=0.5pt,sloped] {\small \trad{equator}{équateur}};
+
+\draw[green,thick] (TNE) -- (TNW) node[pos=0.05,anchor=south east,inner sep=0.5pt,sloped] {\small \trad{cancer}{cancer}};
+\draw[green,thick] (TSE) -- (TSW) node[pos=\trad{0.05}{0},anchor=south east,inner sep=0.5pt,sloped] {\small \trad{capricorn}{capricorne}};
+
+\draw[blue!20!white,thick] (PNE) -- (PNW) node[pos=0.5,anchor=north,inner sep=0.5pt,sloped] {\small \trad{polar circle}{~cercle polaire}};
+\draw[blue!20!white,thick] (PSE) -- (PSW) node[pos=0.5,anchor=south,inner sep=0.5pt,sloped] {\small \trad{polar circle}{~cercle polaire}};
+
+\draw (-1.65,0) -- (-1.65,0 |- 185:1.5) -- (185:1.5);
+\draw[fill=black] (-1.57,0 |- 182.5:1.5) circle [radius=.1mm];
+\draw[yellow,thick,out=-75,in=75,fill=yellow] (-4.5,2) to (-4.5,-2);
+\draw[yellow,thick] (-4.5,0) -- (TSW);
+\draw[yellow,thick] (-4.5,0 |- PSW) -- (PSW);
+\draw[yellow,thick] (-4.5,0 |- W) -- (W);
+\draw[yellow,thick] (-4.5,0 |- TNW) -- (TNW);
+\draw[yellow,thick] (-4.5,0 |- PNW) -- (PNW);
+
+\end{tikzpicture}
+
+## ---- cosmo-equinox ----
+
+\begin{tikzpicture}[scale=2]
+\coordinate (O) at (0,0);
+\coordinate (EN) at (0,2);
+\coordinate (ES) at (0,-2);
+\coordinate (EE) at (2,0);
+\coordinate (EW) at (-2,0);
+
+\coordinate (N) at (90:1.6cm);
+\coordinate (S) at (270:1.6cm);
+\coordinate (E) at (0:1.5cm);
+\coordinate (W) at (180:1.5cm);
+
+\coordinate (TNE) at (23.5:1.5cm);
+\coordinate (TNW) at (156.5:1.5cm);
+\coordinate (TSE) at (336.5:1.5cm);
+\coordinate (TSW) at (203.5:1.5cm);
+
+\coordinate (PNE) at (66.5:1.5cm);
+\coordinate (PNW) at (113.5:1.5cm);
+\coordinate (PSE) at (293.5:1.5cm);
+\coordinate (PSW) at (246.5:1.5cm);
+
+\draw[fill=white,path picture={
+               \node[] at (0,0){
+                   \includegraphics[width=6cm]{pictures/Cosmology/diagrams/blackmarble}
+               };}] (0,1.5) arc [start angle=90, end angle=-90, radius=1.5cm];
+
+\draw[fill=white,path picture={
+               \node[] at (0,0){
+                   \includegraphics[width=6cm]{pictures/Cosmology/diagrams/bluemarble}
+               };}] (0,1.5) arc [start angle=90, end angle=270, radius=1.5cm];
+
+\draw[gray] (EW) -- (EE) node[pos=1,anchor=west] {\small \trad{ecliptic}{ecliptique}};
+\draw[gray] (ES) -- (EN);
+\draw (0,0) circle [radius=1.5cm];
+
+\draw[red,thick] (N) node[above=6pt,fill=white,inner sep=1pt] {N} -- (S) node[below=6pt,fill=white,inner sep=1pt] {S};
+\draw[red,thick] (E) -- (W) node[pos=0.05,anchor=north east,inner sep=0.5pt,sloped] {\small \trad{equator}{équateur}};
+
+\draw[green,thick] (TNE) -- (TNW) node[pos=0.05,anchor=north east,inner sep=0.5pt,sloped] {\small cancer};
+\draw[green,thick] (TSE) -- (TSW) node[pos=0.05,anchor=north east,inner sep=0.5pt,sloped] {\small \trad{capricorn}{capricorne}};
+
+\draw[blue!20!white,thick] (PNE) -- (PNW) node[pos=0.5,anchor=north,inner sep=0.5pt,sloped] {\small \trad{polar circle}{~cercle polaire}};
+\draw[blue!20!white,thick] (PSE) -- (PSW) node[pos=0.5,anchor=south,inner sep=0.5pt,sloped] {\small \trad{polar circle}{~cercle polaire}};
+
+\draw (-1.65,0) -- (-1.65,0 |- 185:1.5) -- (185:1.5);
+\draw[fill=black] (-1.57,0 |- 182.5:1.5) circle [radius=.1mm];
+\draw[yellow,thick,out=-75,in=75,fill=yellow] (-4.5,2) to (-4.5,-2);
+\draw[yellow,thick] (-4.5,0 |- TSW) -- (TSW);
+\draw[yellow,thick] (-4.5,0 |- PSW) -- (PSW);
+\draw[yellow,thick] (-4.5,0 |- W) -- (W);
+\draw[yellow,thick] (-4.5,0 |- TNW) -- (TNW);
+\draw[yellow,thick] (-4.5,0 |- PNW) -- (PNW);
+
+\end{tikzpicture}

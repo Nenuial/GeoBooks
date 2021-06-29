@@ -1,0 +1,89 @@
+# (PART) Méthodologie {-}
+
+# Documentation
+
+## Les sources
+
+La rédaction d'un travail de maturité en géographie commence inévitablement par une documentation sur le sujet retenu. Une documentation, aussi large que possible sans pour autant s'éloigner du sujet-cadre, permet d'approfondir les connaissances. La recherche bibliographique peut vite s'avérer chronophage.
+
+Concentrez-vous sur quelques ouvrages clés au début avant d'approfondir vos recherches. Appliquez le principe en cascade: commencez par des ouvrages plus généraux avant de chercher des sources plus spécifiques.
+
+Chaque ouvrage sérieux est en général accompagné d'une bibliographie. L'exploration de différentes bibliographies dans des ouvrages généraux permettra de trouver des sources plus spécifiques. Une recherche sur internet avec des mots-clés bien choisis permettra souvent de dénicher des références pertinentes.
+
+### Où trouver des ouvrages?
+
+Beaucoup d'informations se trouvent aujourd'hui sur internet. Il faut cependant être particulièrement prudent avec les informations trouvées sur des sites dont la fiabilité n'est pas absolument certaine!
+
+La Wikipedia est une mine d'informations d'ordre général. **Un article de la Wikipédia ne constitue cependant pas une source!** Les bons articles contiennent des références qui méritent souvent d'être consultées. La Wikipédia peut donc s'avérer un bon point de départ dans la recherche de sources pour le TM.
+
+Même si de nombreuses informations sont aujourd'hui accessibles en ligne, une recherche d'ouvrages *papier* est incontournable. Quelques bonnes pistes pour débuter vos recherches:
+
+- Catalogue de la bibliothèque du LDDR:  
+    <http://netbiblio2.rpn.ch/neuc-lddr/>
+- Catalogue des bibliothèques publiques romandes:  
+    <https://explore.rero.ch/>
+- Catalogue des bibliothèques universitaires suisses:  
+    <https://swisscovery.slsp.ch/>
+- Google Books:  
+    <https://books.google.ch>
+- Google Scholar:  
+    <https://scholar.google.ch>
+
+### Qu'est-ce qu'une bonne source?
+
+Les anglais disent "Don't judge a book by its cover". Cet adage est particulièrement vrai lorsqu'on recherche de *bonnes* références. Ce n'est pas la couverture du livre qui en dira beaucoup sur son contenu. Commencer par consulter la table des matières. Elle vous en dira beaucoup plus sur les points abordés dans l'ouvrage.
+
+Il n'est pas aisé de dire du premier coup d'oeil ce qui constitue une *bonne* ou une *mauvaise* source. Une référence qui est reprise par de nombreux autres ouvrages peut cependant être considérée comme relativement fiable. Cela dit, gardez toujours un esprit critique, même avec les meilleurs ouvrages. Lorsqu'une affirmation est contestée, demandez-vous pourquoi. Creusez lorsque les points de vue ne sont pas unanimes.
+
+## La grille de lecture
+
+Au cours de vos lectures, organisez-vous pour prendre des notes. Il vous sera impossible de vous souvenir de toutes vos lectures lorsque vous rédigerez votre TM. Essayez de synthétiser ce que vous lisez en résumant les différentes sections qui vous ont paru pertinentes.
+
+Il n'existe pas de système universel qui convienne à tout le monde. Chacun doit trouver une organisation qui lui parait efficace. La prise de note selon le système de Cornell (voir figure \@ref(fig:cornell)) est cependant réputée pour son efficacité.
+
+```{r cornell, fig.align='center', fig.cap='Prise de notes selon le système de Cornell', out.width="60%"}
+knitr::include_graphics("pictures/cornell.png")
+```
+
+Une colonne sur la gauche permet de retenir des mot-clés concernant les notes pour retrouver les informations aisément. Une section au bas de la page permet de résumer les informations.
+
+
+# Problématique
+
+La première étape de rédaction du TM consiste à formuler une problématique. La problématique doit rentrer dans le sujet-cadre retenu. Une bonne problématique expose de façon claire et pertinente le problème que vous allez chercher à résoudre dans votre TM.
+
+La problématique peut tenir sur une phrase ou un paragraphe. À partir de votre problématique, vous pourrez ensuite formuler une question de recherche. La question de recherche découle de la problématique. La question centrale peut ensuite être décomposée en plusieurs sous-questions. Le TM apportera des éléments de réponse à chacune des sous-questions formulées dans cette partie.
+
+Dans la conclusion du TM, on pourra revenir sur la question de recherche et faire un bilan des éléments de réponse apportés.
+
+
+# Méthodes {#methodes}
+
+## Les méthodes de recherche
+
+Un bon travail de maturité ira au-delà d'une simple recherche documentaire. En effet, la synthèse de travaux existants est une partie importante d'un travail académique, mais elle ne constitue qu'une première étape pour un travail abouti.
+
+Dans le cadre d'une recherche en géographie, des méthodes qualitatives comme quantitatives s'offrent à nous. En fonction de la question de recherche, l'un ou l'autre domaine sera privilégié. Une combinaison de plusieurs méthodes est tout à fait envisageable.
+
+## Les méthodes qualitatives
+
+Les méthodes qualitatives regroupent une famille d'outil permettant d'obtenir des données qualitatives pour des phénomènes qui serait autrement difficilement mesurable. Ces outils permettent de récolter des informations permettant d'amener des éléments de réponse à la question de recherche.
+
+Parmi les méthodes qualitatives possibles dans le cadre d'un travail de maturité on retiendra principalement l'observation et l'entretien.
+
+### L'observation
+
+Suivant l'objet d'étude défini dans la problématique, l'observation s'impose comme la méthode principale permettant de décrire un phénomène. L'observation est une méthode qui se prête particulièrement bien aux sujets en rapport avec un processus spatial.
+
+### L'entretien
+
+L'entretien est un des outils principaux utilisés comme méthode qualitative. Quelle que soit la question de recherche, un entretien pourra par exemple permettre de clarifier un aspect de la problématique.
+
+Les entretiens peuvent être plus ou moins directifs: selon les informations recherchées, les questions posées peuvent être plus ou moins ouvertes. Quel que soit le type d'entretien prévu, une grille d'entretien est un bon moyen de maintenir un fil rouge cohérent lors de l'entretien.
+
+## Les méthodes quantitatives
+
+Lorsque les phénomènes observés possèdent des éléments mesurables, les méthodes quantitatives sont privilégiées. Pour de nombreux domaines, on peut avoir recours à des statistiques.
+
+Si le sujet s'y prête, un questionnaire est un moyen simple d'obtenir soi-même des données quantitatives en rapport avec l'objet de recherche.
+

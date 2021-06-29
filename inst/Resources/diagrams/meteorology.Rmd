@@ -1,0 +1,643 @@
+## ---- meteo-atmosphere-layers ----
+
+\pgfplotstableread[col sep=comma,
+            	   header=true,]{
+pressure,temperature
+1000,-100
+0.00001,100
+}\prestable
+\pgfplotstableread[col sep=comma,
+            	   header=true,]{
+altitude,temperature
+0,20
+12,-55
+20,-55
+48,-5
+52,-5
+85,-90
+90,-95
+100,-80
+110,-40
+115,-10
+120,70
+}\loadedtable
+\pgfplotsset{compat=1.6}
+\begin{tikzpicture}
+	\begin{axis}[%
+				 scale only axis,
+				 width=12cm,
+				 height=10cm,
+				 xmin=-100,
+				 xmax=100,
+				 hide x axis,
+				 ylabel={\trad{Pressure}{Pression} (mb)},
+				 ymin=0.0006,
+				 ymax=1000,
+				 ymode=log,
+				 log ticks with fixed point,
+				 y dir=reverse,
+				 axis y line*=right,
+				 yticklabel style={
+      					/pgf/number format/fixed,
+      					/pgf/number format/fixed zerofill,
+      					/pgf/number format/.cd,1000 sep={\,},
+   					}
+				]
+	\end{axis}
+	\begin{axis}[%
+				 scale only axis,
+				 width=12cm,
+				 height=10cm,
+				 xlabel={\trad{Temperature}{Température} ($^\circ$C)},
+				 xmin=-100,
+				 xmax=100,
+				 xtick={-80,-60,...,80},
+				 enlarge x limits={value=25,auto},
+				 ylabel={Altitude (km)},
+				 ymin=0,
+				 ymax=120
+				]
+				\node[inner sep=0,outer sep=0,anchor=south west] at (0,0) {\includegraphics[width=12cm]{pictures/Meteorology/diagrams/atmosphere_layers}};
+				\addplot+[red, very thick, mark=none] table [x index=1, y index=0] {\loadedtable};
+				\draw[thick, dashed] (axis cs: -100,12) -- (axis cs: 100,12);
+				\draw[thick, dashed] (axis cs: -100,48) -- (axis cs: 100,48);
+				\draw[thick, dashed] (axis cs: -100,90) -- (axis cs: 100,90);
+				\node[inner sep=0.5,anchor=west,fill=white] at (12,12) {tropopause};
+				\node[inner sep=0.5,anchor=west,fill=white] at (12,48) {stratopause};
+				\node[inner sep=0.5,anchor=west,fill=white] at (12,90) {\trad{mesopause}{mésopause}};
+				
+				\node[inner sep=0.5,anchor=east] at (195,8) {\trad{troposphere}{troposphère}};
+				\node[inner sep=0.5,anchor=east] at (195,25) {\trad{stratosphere}{stratosphère}};
+				\node[inner sep=0.5,anchor=east] at (195,60) {\trad{mesosphere}{mésosphère}};
+				\node[inner sep=0.5,anchor=east,color=white] at (195,105) {\trad{thermosphere}{thermosphère}};
+	\end{axis}
+\end{tikzpicture}
+
+
+## ---- meteo-atmosphere-dynamics ----
+
+\tikzset{
+    %Define standard arrow tip
+    >=stealth',
+    %Define style for boxes
+    process/.style={
+           ellipse,
+           draw=black, very thick,
+           text width=\trad{5.5em}{7em},
+           minimum height=4em,
+           text centered},
+    % Define arrow style
+    arrow/.style={
+           ->,
+           ultra thick},
+    el/.style={
+    	   inner sep=2pt,
+    	   align=center}
+}
+
+\begin{tikzpicture}[node distance=1cm, auto,]
+ %nodes
+ \node (center) {};
+ \node[process, inner sep=5pt, above=1.5cm of center]
+ (temperature) {\trad{Temperature differences}{Différences de température}};
+ 
+ \node[process, inner sep=5pt, right=2cm of center]
+ (density) {\trad{Density differences}{Différences de densité}};
+ 
+ \node[process, inner sep=5pt, below=1.5cm of center]
+ (pressure) {\trad{Pressure differences}{Différences de pression}};
+ 
+ \node[process, inner sep=5pt, left=2cm of center]
+ (wind) {\trad{Wind}{Vent}};
+ 
+ \node[above right=3cm and 2.5cm of center] (heating) {\trad{Differential heating}{Réchauffement solaire}};
+
+
+ \path[->]
+ 		(temperature.east) edge [arrow, bend left=30] node[el,right=.2cm] {\trad{Perfect Gas Law}{Loi des gaz parfaits}} (density.north)
+ 		(density.south) edge [arrow, bend left=30] node[el,right=.2cm] {\trad{Hydrostatic Law}{Loi hydrostatique}} (pressure.east)
+ 		(pressure.west) edge [arrow, bend left=30] node[el,left=.2cm] {\trad{Geostrophic Law}{Loi géostrophique}} (wind.south)
+ 		(wind.north) edge [arrow, bend left=30] node[el,left=.3cm] {Advection\\ \trad{Adiabatic expansion}{Expansion adiabatique}} (temperature.west)
+ 		(heating.west) edge [arrow, bend right=15] (temperature.north east);
+
+\end{tikzpicture}
+
+
+## ---- meteo-energy-balance ----
+
+\pgfplotsset{compat=1.6}\def\energyUnit{\watt\per\square\meter}\newcommand{\energy}[2]{$\SI{#1}{\energyUnit}$\\ #2 \%}\begin{tikzpicture}
+	\tikzstyle{balance} = [draw=white,line width=1.5pt,fill=white,fill opacity=.65,text opacity=1,inner sep=.15cm,rounded corners=.1cm,align=center]
+	\tikzstyle{input} = [draw=yellow,line width=1.5pt,fill=yellow,fill opacity=.65,text opacity=1,inner sep=.15cm,rounded corners=.1cm,align=center]
+	\tikzstyle{lw} = [draw=yellow,line width=1.5pt,fill=white,fill opacity=.65,text opacity=1,inner sep=.15cm,rounded corners=.1cm,align=center]
+	\tikzstyle{sw} = [draw=red,line width=1.5pt,fill=white,fill opacity=.65,text opacity=1,inner sep=.15cm,rounded corners=.1cm,align=center]
+	\tikzstyle{ghe} = [draw=red,line width=1.5pt,fill=red,fill opacity=.65,text opacity=1,inner sep=.15cm,rounded corners=.1cm,align=center]
+	
+	\node[inner sep=0,outer sep=0,anchor=south west] at (0,0) {\includegraphics{pictures/Meteorology/diagrams/atmosphere_balance}};
+	
+	\node[input] at (1.8,9.6) {\energy{342}{100}};%
+	\node[lw,anchor=south] at (4.5,9.5) {\energy{83}{25}};%
+	\node[lw,anchor=north] at (6.4,8.6) {\energy{20}{6}};%
+	\node[lw,anchor=west] at (.2,3) {\energy{81}{23}};
+	\node[lw] at (3.8,.8) {\energy{158}{46}};
+	
+	\node[sw,anchor=north] at (12.2,8.6) {\energy{32}{9}};
+	\node[sw,anchor=south] at (15,5) {\energy{360}{115}};
+	\node[sw,anchor=south east] at (19.9,.1) {\energy{340}{99}};
+	\node[sw,anchor=south east] at (18.2,8.3) {\energy{207}{60}};
+	
+	\node[ghe,anchor=north east] at (19.9,12.4) {\textbf{\trad{Greenhouse effect}{Effet de serre}}\\\trad{IR Balance Earth -- Atmosphere}{Bilan IR Terre -- Atmosphère}:\\ $+360-207=+\SI{153}{\energyUnit}$};
+	
+	\node[balance, anchor=north] at (10,12.4) {\textbf{\trad{Energy balance}{Bilan d'énergie}}\\\trad{Solar}{Solaire}: $+342-83-20=+\SI{239}{\energyUnit}$\\IR: $-207-32=\SI{-239}{\energyUnit}$\\\trad{Balance}{Bilan}: 0};
+	
+	\node[balance] at (10,3.8) {\textbf{\trad{Atmospheric balance}{Bilan d'atmosphère}}\\\trad{Solar}{Solaire}: $+\SI{81}{\energyUnit}$\\IR: $+360-340-207=\SI{-187}{\energyUnit}$\\\trad{Balance}{Bilan}: $\SI{-106}{\energyUnit}$};
+	
+	\node[balance, anchor=south] at (10,.1) {\textbf{\trad{Surface balance}{Bilan de surface}}\\\trad{Solar}{Solaire}: $+\SI{158}{\energyUnit}$\\IR: $-392+340=\SI{-52}{\energyUnit}$\\\trad{Balance}{Bilan}: $\mathbf{+\SI{106}{\energyUnit}}$};
+\end{tikzpicture}
+
+
+## ---- meteo-global-atmospheric-circulation ----
+
+\pgfplotsset{compat=1.6}\edef\polartext{\trad{Polar}{Polaire}}\begin{tikzpicture}
+	
+	\node[inner sep=0,outer sep=0] at (0,0) {\includegraphics{pictures/Meteorology/diagrams/global_atmospheric_circulation}};
+	
+	\path[xshift=1cm,yshift=.2cm,postaction={decorate},decoration={text along path, text={Hadley},text align=center,reverse path,raise=4pt},rotate=-43] (0,0) circle [radius=5.25cm];
+	
+	\path[xshift=1cm,yshift=.2cm,postaction={decorate},decoration={text along path, text={Ferell},text align=center,reverse path},rotate=-73.5] (0,0) circle [radius=5.25cm];
+	
+	\path[xshift=1cm,yshift=.2cm,postaction={decorate},decoration={text along path, text={\polartext},text align=center,reverse path},rotate=-102] (0,0) circle [radius=5.25cm];
+
+	\node[anchor=west] at (-6.6,-3.35) {\trad{Trade winds}{Alizés}};
+	\node[anchor=west] at (-6.6,-4) {\trad{Westerlies}{Vents d'ouest}};
+	\node[anchor=west] at (-6.6,-4.7) {\trad{Polar easterlies}{Vents d'est polaires}};
+\end{tikzpicture}
+
+
+## ---- meteo-coriolis ----
+
+\pgfplotsset{compat=1.6}%
+\tikzset{>=stealth}%
+\begin{tikzpicture}
+	\tikzstyle{label} = [draw=gray, line width=1pt, fill=white, shape=rectangle, rounded corners=.1cm, align=center];
+
+	\node[outer sep=0pt, inner sep=0pt, anchor=south] at (0,0) {\includegraphics[width=10cm]{pictures/Meteorology/diagrams/coriolis_n.pdf}};
+	
+	\node[anchor=south] at (90:5cm) {N};
+	
+	\node[anchor=north] at (-1.25,0) {\SI{15}{\degree} W};
+	\node[anchor=north] at (0,0) {\SI{0}{\degree}};
+	\node[anchor=north] at (1.25,0) {\SI{15}{\degree} E};
+	
+	\draw[tips,{-Stealth}] (-1.25,-.7) -- (1.25,-.7) node[anchor=north, pos=.5] {rotation};
+
+	\node[label] (nocoro) at (2.5,3) {\small\trad{No coriolis\\\small force}{Pas de force\\\small de coriolis}};
+	\node[label] (coro) at (-2.5,3) {\small\trad{With coriolis\\\small force}{Avec force\\\small de coriolis}};
+	
+	\draw[line width=1pt, gray] (nocoro.west) -- (1.15,2.55);
+	\draw[line width=1pt, gray] (coro.east) -- (.8,2.55);
+	
+	\begin{scope}[yshift=-1.95cm]
+		\node[outer sep=0pt, inner sep=0pt, anchor=north] at (0,0) {\includegraphics[width=10cm]{pictures/Meteorology/diagrams/coriolis_s.pdf}};
+	
+		\node[anchor=north] at (-90:5cm) {S};
+	
+		\node[anchor=south] at (-1.25,0) {\SI{15}{\degree} W};
+		\node[anchor=south] at (0,0) {\SI{0}{\degree}};
+		\node[anchor=south] at (1.25,0) {\SI{15}{\degree} E};
+	
+		\draw[tips,{-Stealth}] (-1.25,.7) -- (1.25,.7);
+	
+		\node[label] (nocoro) at (2.5,-3) {\small\trad{No coriolis\\\small force}{Pas de force\\\small de coriolis}};
+		\node[label] (coro) at (-2.5,-3) {\small\trad{With coriolis\\\small force}{Avec force\\\small de coriolis}};
+	
+		\draw[line width=1pt, gray] (nocoro.west) -- (1.15,-2.55);
+		\draw[line width=1pt, gray] (coro.east) -- (.8,-2.55);
+	\end{scope}
+\end{tikzpicture}
+
+## ---- meteo-geostrophic-wind ----
+
+\pgfplotsset{compat=1.6}%
+\definecolor{sky}{RGB}{0,214,255}%
+\definecolor{darkred}{RGB}{186,0,0}%
+\definecolor{purple}{RGB}{186,0,0}%
+\makeatletter
+\newif\iftikz@shading@path
+\tikzset{>=stealth}%
+\makeatother%
+\newcommand{\wpoint}[2]{\coordinate (w#2) at (#1);%
+						\draw[fill=black] (#1) circle (2pt) node[anchor=south east] {#2};}%
+\newcommand{\wforces}[3]{}%
+\begin{tikzpicture}[background rectangle/.style={line width=0pt,fill=sky!25!white}]
+	\node[anchor=north] at (5,-99) {\Huge\bfseries\color{blue}H};
+	\draw (0,-98) node[anchor=east] {908 mb} -- (13,-98);
+	\draw (0,-94) node[anchor=east] {904 mb} -- (13,-94);
+	\draw (0,-90) node[anchor=east] {900 mb	} -- (13,-90);
+	\node[anchor=south] at (5,-89) {\Huge\bfseries\color{darkred}\trad{L}{B}};
+	
+	\draw[->, darkred, line width=2pt] (-2,-96) -- (-2,-92) node[pos=.5, align=center, sloped, above] {\small\trad{Pressure gradient}{Gradient de pression}};
+	
+	\wpoint{.5,-97.5}{1}
+	\wpoint{1.5,-95.5}{2}
+	\wpoint{3.5,-93.5}{3}
+	\wpoint{8,-92}{4}
+	
+	\begin{scope}[shift=(w1)]
+		\path[draw,->, darkred, line width=1pt, shorten <=2pt] (0,0) -- (0,2) node[anchor=south] {$\trad{F_{PG}}{F_{GP}}$};
+		\path[draw, purple, line width=2pt, bend left=8, shorten <=2pt, shorten >=4pt] (w1) edge[->] (w2);
+	\end{scope}
+	
+	\begin{scope}[shift=(w2)]
+		\path[draw,->, darkred, line width=1pt, shorten <=2pt] (0,0) -- (0,2) node[anchor=south] {$\trad{F_{PG}}{F_{GP}}$};
+		\path[draw,->, blue, line width=1pt, shorten <=2pt] (0,0) -- (-36:1cm) node[anchor=north west] {$F_C$};
+		\path[draw, purple, line width=2pt, bend left=10, shorten <=2pt, shorten >=4pt] (w2) edge[->] (w3);
+	\end{scope}
+	
+	\begin{scope}[shift=(w3)]
+		\path[draw,->, darkred, line width=1pt, shorten <=2pt] (0,0) -- (0,2) node[anchor=south] {$\trad{F_{PG}}{F_{GP}}$};
+		\path[draw,->, blue, line width=1pt, shorten <=2pt] (0,0) -- (-51:1.5cm) node[anchor=north west] {$F_C$};
+		\path[draw, purple, line width=2pt, bend left=16, shorten <=2pt, shorten >=4pt] (w3) edge[->] (w4);
+	\end{scope}
+	
+	
+	\begin{scope}[shift=(w4)]
+		\path[draw,->, darkred, line width=1pt, shorten <=2pt] (0,0) -- (0,2) node[anchor=south] {$\trad{F_{PG}}{F_{GP}}$};
+		\path[draw,->, blue, line width=1pt, shorten <=2pt] (0,0) -- (0,-2) node[anchor=north] {$F_C$};
+		\path[draw, purple, line width=2pt, shorten <=2pt] (w4) edge[->] (5,0);
+	\end{scope}
+
+\end{tikzpicture}
+
+
+## ---- meteo-pressure-circulation-north ----
+
+\pgfplotsset{compat=1.6}%
+\definecolor{sky}{RGB}{0,214,255}%
+\tikzset{>=stealth}%
+\providecommand{\wind}[0]{~}%
+\providecommand{\hwind}[0]{~}%
+\renewcommand{\wind}[4]{\begin{scope}[rotate around={#4:(#1:#3)}]%
+						\draw[->,blue,line width=3pt] ($(#1:#3) - (#1:#2)$) -- ($(#1:#3) + (#1:#2)$);%
+					 \end{scope}}%
+\renewcommand{\hwind}[2]{\draw[#2,blue,line width=4pt] (#1:3cm) arc [start angle=#1, end angle=#1-60, radius=3cm];}%					 
+\begin{tikzpicture}
+\begin{scope}[shift={(-9.5,0)}]
+	\coordinate (O) at (0,0);
+	\draw[fill=sky!25!white] (-4.5,4.5) rectangle (4.5,-5);
+	\draw[white, thick] (O) circle (2 cm);
+	\draw[white, thick] (O) circle (4 cm);
+	
+	\node[anchor=south] at ($(O) - (0,5)$) {\trad{northern hemisphere surface}{hémisphère nord à la surface}};
+	
+	\node at (O) {\Huge\bfseries\color{blue}H};
+	
+	\foreach \x in {0,45,...,315}{
+		\wind{\x}{.28cm}{2cm}{-55}
+	}
+	
+	\foreach \x in {22.5,67.5,...,337.5}{
+		\wind{\x}{.35cm}{3cm}{-55}
+	}
+	
+	\foreach \x in {0,45,...,315}{
+		\wind{\x}{.4cm}{4cm}{-55}
+	}
+\end{scope}
+
+\begin{scope}[shift={(0,0)}]
+	\coordinate (O) at (0,0);
+	\draw[fill=sky!25!white] (-4.5,4.5) rectangle (4.5,-5);
+	\draw[white, thick] (O) circle (2 cm);
+	\draw[white, thick] (O) circle (4 cm);
+	
+	\node[anchor=south] at ($(O) - (0,5)$) {\trad{northern hemisphere altitude}{hémisphère nord en altitude}};
+	
+	\node at (O) {\Huge\bfseries\color{blue}H};
+	
+	\hwind{0}{->}
+	\hwind{1202}{->}
+	\hwind{240}{->}
+\end{scope}
+
+\renewcommand{\wind}[4]{\begin{scope}[rotate around={#4:(#1:#3)}]%
+						\draw[<-,red,line width=3pt] ($(#1:#3) - (#1:#2)$) -- ($(#1:#3) + (#1:#2)$);%
+					 \end{scope}}%
+\renewcommand{\hwind}[2]{\draw[#2,red,line width=4pt] (#1:3cm) arc [start angle=#1, end angle=#1-60, radius=3cm];}%	
+
+\begin{scope}[shift={(-9.5,-10)}]
+	\coordinate (O) at (0,0);
+	\draw[fill=sky!25!white] (-4.5,4.5) rectangle (4.5,-5);
+	\draw[white, thick] (O) circle (2 cm);
+	\draw[white, thick] (O) circle (4 cm);
+	
+	\node[anchor=south] at ($(O) - (0,5)$) {\trad{northern hemisphere surface}{hémisphère nord à la surface}};
+	
+	\node at (O) {\Huge\bfseries\color{red}\trad{L}{B}};
+	
+	\foreach \x in {0,45,...,315}{
+		\wind{\x}{.28cm}{2cm}{-55}
+	}
+	
+	\foreach \x in {22.5,67.5,...,337.5}{
+		\wind{\x}{.35cm}{3cm}{-55}
+	}
+	
+	\foreach \x in {0,45,...,315}{
+		\wind{\x}{.4cm}{4cm}{-55}
+	}
+\end{scope}
+
+\begin{scope}[shift={(0,-10)}]
+	\coordinate (O) at (0,0);
+	\draw[fill=sky!25!white] (-4.5,4.5) rectangle (4.5,-5);
+	\draw[white, thick] (O) circle (2 cm);
+	\draw[white, thick] (O) circle (4 cm);
+	
+	\node[anchor=south] at ($(O) - (0,5)$) {\trad{northern hemisphere altitude}{hémisphère nord en altitude}};
+	
+	\node at (O) {\Huge\bfseries\color{red}\trad{L}{B}};
+	
+	\hwind{0}{<-}
+	\hwind{1202}{<-}
+	\hwind{240}{<-}
+\end{scope}
+\end{tikzpicture}
+
+
+## ---- meteo-adiabatic-dynamic ----
+
+\pgfplotsset{compat=1.6}%
+\definecolor{sky}{RGB}{0,214,255}%
+\definecolor{darkred}{RGB}{186,0,0}%
+\makeatletter
+\newif\iftikz@shading@path
+\tikzset{>=stealth,
+		 fading sep/.store in=\fadingsep,
+    	 fading sep=0.25cm,
+    	 shaded path/.code={%
+    	 % Prevent this stuff happning recursively.
+			\iftikz@shading@path%
+			\else%
+			\tikz@shading@pathtrue%
+			\tikz@addmode{%
+			    % Interrupt the picture to create a fading.
+			    \pgfinterruptpicture%
+			        \begin{tikzfadingfrompicture}[name=.]
+			            \path [shade=none,fill=none]#1;%
+			            % Need to set the bounding box manually. Include the \fadingsep border.
+			            \xdef\fadingboundingbox{{\noexpand\pgfpoint{\the\pgf@picminx-\fadingsep}{\the\pgf@picminy-\fadingsep}}%
+			                {\noexpand\pgfpoint{\the\pgf@picmaxx+\fadingsep}{\the\pgf@picmaxy+\fadingsep}}}%
+			            \expandafter\pgfpathrectanglecorners\fadingboundingbox%
+			            \pgfusepath{discard}%
+			        \end{tikzfadingfrompicture}%
+			    \endpgfinterruptpicture%
+			    % Install a rectangle that covers the shaded/faded path.
+			    \expandafter\pgfpathrectanglecorners\fadingboundingbox%
+			    % Make the fading happen.
+			    \def\tikz@path@fading{.}%
+			    \tikz@mode@fade@pathtrue%
+			    \tikz@fade@adjustfalse%
+			    \pgfpointscale{0.5}{\expandafter\pgfpointadd\fadingboundingbox}%
+			    \def\tikz@fade@transform{shift={(\the\pgf@x,\the\pgf@y)}}%
+			}%
+			\fi%
+		  }%
+}%
+\makeatother%
+\newcommand{\bubble}[4]{\path[black, thick, line, bend right] (#1) edge ($(#1) + (1cm,1cm)$);%
+						\node[yshift=-.1cm] at ($(#1) + (1cm,1cm)$) {\includegraphics[width=1.2cm]{pictures/Meteorology/diagrams/helicopter}};%
+						\node at (#1) {\includegraphics[width=#4cm]{pictures/Meteorology/diagrams/package_#2}};%
+						\node at (#1) {\tiny\SI{#3}{\degreeCelsius}}}%
+\newcommand{\bubblefree}[4]{\node at (#1) {\includegraphics[width=#4cm]{pictures/Meteorology/diagrams/package_#2}};%
+							\node at (#1) {\tiny\SI{#3}{\degreeCelsius}}}%
+\newcommand{\colder}[2]{\node[anchor=south] at (axis cs:65, #1) {\small\trad{Rising air}{air ascendant}};%
+					    \node[anchor=north] at (axis cs:65, #1) {\small\color{blue}\textbf{\SI{#2}{\degreeCelsius}} \color{black} \trad{colder}{plus froid}};}%
+\newcommand{\warmer}[2]{\node[anchor=south] at (axis cs:65, #1) {\small\trad{Rising air}{air ascendant}};%
+					    \node[anchor=north] at (axis cs:65, #1) {\small\color{darkred}\textbf{\SI{#2}{\degreeCelsius}} \color{black} \trad{warmer}{plus chaud}};}%
+\begin{tikzpicture}
+	\tikzstyle{line} = [shorten >=.4cm,shorten <=.4cm];
+	\tikzstyle{block} = [text centered,
+						 execute at begin node={\begin{varwidth}{5cm}},
+  						 execute at end node={\end{varwidth}}];
+  	\tikzstyle{smallblock} = [text centered,
+						 	  execute at begin node={\begin{varwidth}{2cm}},
+  						 	  execute at end node={\end{varwidth}}];
+  	\tikzstyle{arrow} = [->, thick, shorten >=.1cm,shorten <=.1cm];
+	\begin{axis}[%
+				 scale only axis,
+				 width=16cm,
+				 height=13cm,
+				 xmin=0,
+				 xmax=100,
+				 xmajorticks=false,
+				 ylabel={Altitude (m)},
+				 ymin=0,
+				 ymax=4500,
+				 ytick={0,1000,...,5000},
+				 yticklabel style={
+      					/pgf/number format/precision=0,
+      					/pgf/number format/fixed,
+      					/pgf/number format/fixed zerofill,
+      					/pgf/number format/.cd,1000 sep={\,},
+   					}
+				]
+				\coordinate (hot) at (axis cs:38,200);
+				\coordinate (warm) at (axis cs:38,1000);
+				\coordinate (cool) at (axis cs:38,2000);
+				\coordinate (cold) at (axis cs:38,3000);
+				\coordinate (freeze) at (axis cs:38,4000);
+				
+				\draw[bottom color=white, top color=sky, line width=0mm] (axis cs: 0,0) rectangle (axis cs: 100,4800);
+				\node[anchor=south west, inner sep=0pt, outer sep=0pt] at (0,0) {\includegraphics[width=20cm, height=.75cm]{pictures/Meteorology/diagrams/ground_green}};
+				
+				\node[anchor=south west] at (axis cs: 0,900) {\includegraphics[width=10cm, height=10cm]{pictures/Meteorology/diagrams/cloud}};
+				
+				\draw[black] (axis cs: 25,0) -- (axis cs: 25,950) node[pos=.5, align=center, sloped, anchor=south] {\trad{DALR}{GAS}};
+				\draw[black] (axis cs: 25,950) -- (axis cs: 25,4500) node[pos=.5, align=center, sloped, anchor=south] {\trad{SALR}{GAH}};
+				\draw[thick, black, dashed] (axis cs: 22,950) node[anchor=east, align=right] {\trad{condensation\\ level\\ (cloud base)}{niveau de\\ condensation\\ (base du nuage)}} -- (axis cs: 28,950);
+				
+				\draw[thick, black] (axis cs: 50,0) -- (axis cs: 50,4500);
+				\draw[fill=black] (axis cs: 50,200) circle (1.5pt) node[anchor=south west] {\small\SI{30}{\degreeCelsius}};
+				\draw[fill=black] (axis cs: 50,1000) circle (1.5pt) node[anchor=south west] {\small\SI{21}{\degreeCelsius}}; 
+				\draw[fill=black] (axis cs: 50,2000) circle (1.5pt) node[anchor=south west] {\small\SI{12}{\degreeCelsius}}; 
+				\draw[fill=black] (axis cs: 50,3000) circle (1.5pt) node[anchor=south west] {\small\SI{3}{\degreeCelsius}};
+				\draw[fill=black] (axis cs: 50,4000) circle (1.5pt) node[anchor=south west] {\small\SI{-6}{\degreeCelsius}};
+				
+				\bubble{hot}{hot}{30}{1.2};
+				\bubble{warm}{cold}{20}{1.5};
+				\bubblefree{cool}{cold}{14}{1.8};
+				\bubblefree{cold}{cold}{8}{2.1};
+				\bubblefree{freeze}{cold}{2}{2.4};
+				
+				\colder{1000}{1}
+				\warmer{2000}{2}
+				\warmer{3000}{5}
+				\warmer{4000}{8}
+				
+				\draw[->, shorten >=.1cm] (axis cs:75,0) -- (axis cs:75,1350) node[pos=.5, align=center, sloped, anchor=north] {\trad{stable air}{air stable}};
+				\draw[->, shorten >=.1cm] (axis cs:75,1350) -- (axis cs:75,4500) node[pos=.5, align=center, sloped, anchor=north] {\trad{unstable air}{air instable}};
+				
+				\path[top color=red, bottom color=white!50!yellow, fading sep=1cm,
+    				  shaded path={ 
+        				[draw=transparent!20, line width=.5cm, -stealth] (axis cs: 83,1350) -- (axis cs: 83,4500)
+    				  }];
+    				  
+    			\draw[thick, black, dashed] (axis cs:80,1350) -- (axis cs:86,1350) node[anchor=west, align=left] {\trad{free\\ convection\\ level}{niveau de\\ convection\\ libre}};
+    			
+    			\node[rotate=90] at (axis cs: 83,2925) {\trad{air rises on its own}{air ascendant librement}};%$
+    			
+				
+				\coordinate (elr) at (axis cs: 50,0);
+				\coordinate (dry) at (axis cs: 38,0);
+				\coordinate (sat) at (axis cs: 64,0);
+	\end{axis}
+	\node[anchor=north, align=center] at (elr) {\trad{ELR}{GTE}\\ \SI{9}{\degreeCelsius\per\kilo\meter}};
+	
+	\node[anchor=north west, block] (dryleg) at (2,-1) {\trad{Temperature of lifted air}{Température de l'air soulevé}};
+	\path[arrow, bend right=10] (dryleg.north) edge (dry.south);
+	
+\end{tikzpicture}
+
+
+## ---- meteo-water-cycle ----
+
+\pgfplotsset{compat=1.6}%
+\begin{tikzpicture}
+	\tikzstyle{label} = [draw=gray, line width=1pt, fill=white, shape=rectangle, rounded corners=.1cm, opacity=.7];
+
+	\node[anchor=south west, inner sep=0pt, outer sep=0pt] {\includegraphics{pictures/Meteorology/diagrams/water_cycle.pdf}};
+	
+	\node[label,rotate=90] at (3,5) {\small\trad{Evaporation}{Évaporation}};
+	\node[label,rotate=22] at (3.3,10.2) {\small\trad{Transportation}{Transport}};
+	\node[label] at (8,8) {\small\trad{Precipitation}{Précipitation}};
+	
+	\node[label] at (13.4,10.5) {\small Condensation};
+	\node[label] at (14.5,12.8) {\small\trad{Transportation}{Transport}};
+	\node[label] at (17,10.5) {\small\trad{Precipitation}{Précipitation}};
+	
+	\node[label,rotate=90] at (12.5,4.5) {\small\trad{Evapotranspiration}{Évapotranspiration}};
+	
+	\node[label,rotate=90] at (13.5,7.5) {\small Sublimation};
+	\node[label,rotate=-90] at (19.7,9) {\small\trad{Deposition}{Déposition}};
+	
+	\node[label,rotate=-30] at (17.6,7.25) {\small \trad{Snowmelt runoff}{Fonte des glaces}};
+	
+	\node[label,anchor=west,rotate=-58] at (17.7,6.5) {\small\trad{Surface flow}{Écoulement de surface}};
+	
+	\node[label,rotate=90] at (16,4) {\small\trad{Evaporation}{Évaporation}};
+	
+	\node[label,rotate=-90] at (19,1.8) {\small Infiltration};
+	\node[label,rotate=90] at (14.3,1.8) {\small \trad{Plant uptake}{Absorption}};
+	
+	\node[label,anchor=west] at (6.9,1.2) {\small \trad{Groundwater flow}{Écoulement souterrain}};
+\end{tikzpicture}
+
+
+## ---- meteo-dew-point ----
+
+\pgfplotsset{compat=1.6}%
+\definecolor{lightblue}{RGB}{155,216,255}%
+\newcommand{\thermo}[3]{%
+\begin{scope}[scale=.2, yscale=-1, y=1pt, x=1pt, inner sep=0pt, outer sep=0pt, shift=#1, rotate around={90:(O)},]
+	\def\thermopath{
+	  (280.0313,169.3125) .. controls (263.9888,169.3125) and (250.6461,179.3446) ..
+	  (247.8125,192.5625) -- 
+	  (247.3438,563.7500) .. controls (235.7346,573.2243) and (228.3438,587.6282) ..
+	  (228.3438,603.7813) .. controls (228.3438,632.3161) and (251.4651,655.4688) ..
+	  (280.0000,655.4688) .. controls (308.5349,655.4688) and (331.6563,632.3161) ..
+	  (331.6563,603.7813) .. controls (331.6563,587.6282) and (324.2654,573.2243) ..
+	  (312.6563,563.7500) -- 
+	  (312.2500,192.5625) .. controls 
+	  (309.4164,179.3446) and (296.0737,169.3125) .. (280.0313,169.3125) -- cycle
+	 }
+	\path[miter limit=4,even odd rule,fill=gray!20]
+	    \thermopath;
+	
+	\def\tempincelsius{#2}
+	\begin{scope}
+	    \clip \thermopath;
+	    \fill[#3] (210,{660-25*\tempincelsius}) -- ++(140,0)
+	        -- (350, 690) -- (210, 690) -- cycle;
+	\end{scope}
+	
+	\path[name path=T1,draw=black,miter limit=4,even odd rule,line width=1pt]
+	    \thermopath;
+	
+	\path[name path=L1] (228.3438,{660-25*\tempincelsius}) -- (280.2344,{660-25*\tempincelsius});
+	% max 312.6563, min 247.8125, center 280.2344
+	\path[name path=L2] (280.2344,{660-25*\tempincelsius}) -- (331.6563,{660-25*\tempincelsius});
+	% max 312.6563, min 247.8125, center 280.2344
+	
+	\path [name intersections={of=T1 and L1,by={topT}}];
+	\path [name intersections={of=T1 and L2,by={botT}}];
+\end{scope}
+}%
+\newcommand{\dewT}[5]{%
+	\coordinate (O) at (0,0);
+	\coordinate (T1) at ($(O)+(-1,4.8)$);
+	\coordinate (T2) at ($(O)+(0.5,4.8)$);
+
+	\node[anchor=west] at (0,.6) {\bfseries #1};
+	\node[anchor=west] (airT) at (3,-.35) {\footnotesize\trad{Air temperature}{Température de l'air}};
+	\node[anchor=west] (dewT) at (3,-3.15) {\footnotesize\trad{Dew point temperature}{Point de rosée}};
+
+	\thermo{(T1)}{#2}{red}
+	\node[anchor=north west] at (botT) {\scriptsize\SI{#2}{\degreeCelsius}};
+	\draw (airT.west) -- (topT);
+	\thermo{(T2)}{#3}{lightblue}
+	\node[anchor=south west] at (topT) {\scriptsize\SI{#3}{\degreeCelsius}};
+	\draw (dewT.west) -- (botT);
+	
+	\FPeval{\result}{round((#5/#4)*100,0)}
+	
+	\node[anchor=west] at (7.5,-1.71) {\trad{Saturation mixing ratio}{Rapport de mélange à saturation} = \SI{#4}{\gram\per\kilo\gram}};
+	\node[anchor=west] at (7.5,-.96) {\trad{Mixing ratio}{Rapport de mélange} = \SI{#5}{\gram\per\kilo\gram}};
+	\node[anchor=west] at (7.5,-2.46) {\trad{RH}{HR} = $\frac{#5}{#4}\cdot 100=\result\%$};
+}%
+\begin{tikzpicture}%
+\begin{scope}
+	\dewT{\trad{Air temperature greater than dew point}{Température de l'air supérieure au point de rosée}}{14}{10}{10}{8}
+\end{scope}
+
+\begin{scope}[yshift=-5cm]
+	\dewT{\trad{Air temperature equal to dew point}{Température de l'air égale au point de rosée}}{10}{10}{8}{8}
+\end{scope}
+
+\begin{scope}[yshift=-10cm]
+	\dewT{\trad{Equal reduction in temperature and dew point}{Réduction égale de la température et du point de rosée}}{6}{6}{6}{6}
+\end{scope}
+	
+\end{tikzpicture}
+
+
+## ---- meteo-clouds ----
+
+\pgfplotsset{compat=1.6}%
+\begin{tikzpicture}
+	\tikzstyle{label} = [draw=gray, line width=1pt, fill=white, shape=rectangle, rounded corners=.1cm];
+
+	\node[anchor=south west, inner sep=0pt, outer sep=0pt] {\includegraphics{pictures/Meteorology/diagrams/clouds.pdf}};
+	
+	\node[rotate=90] at (.6,2) {\scshape\Large\bfseries\trad{Low}{Bas}};
+	\node[rotate=90] at (.6,6.5) {\scshape\Large\bfseries\trad{Middle}{Moyen}};
+	\node[rotate=90] at (.6,10.8) {\scshape\Large\bfseries\trad{High}{Haut}};
+	
+	\node[anchor=west] at (0,4.3) {\footnotesize\color{gray}2000 m};
+	\node[anchor=west] at (0,8.28) {\footnotesize\color{gray}7000 m};
+	\node[anchor=west] at (0,12.8) {\footnotesize\color{gray}12000 m};
+	
+	\node[label] at (4.5,10) {Cumulonimbus};
+	
+	\draw[fill=black, thick] (10.5,9.5) circle (4pt) -- (10.5,11.8) node[label] {Cirrocumulus};
+	\draw[fill=black, thick] (13.5,8.8) circle (4pt) -- (13.5,11.8) node[label] {Cirrostratus};
+	\draw[fill=black, thick] (17.2,9.5) circle (4pt) -- (17.2,11.8) node[label] {Cirrus};
+	
+	\draw[fill=black, thick] (8.65,6.1) circle (4pt) -- (8.65,6.9) node[label] {Altocumulus};
+	\node[label] at (15.6,6.9) {Altostratus};
+	
+	\node[label] at (12.8,4) {Stratocumulus};
+	\node[label] at (18.5,4.7) {Nimbostratus};
+	
+	\draw[fill=black, thick] (9.5,2.4) circle (4pt) -- (9.5,1.5) node[label] {Cumulus};
+	\draw[fill=black, thick] (12.8,2.4) circle (4pt) -- (12.8,1.5) node[label] {Stratus};
+\end{tikzpicture}

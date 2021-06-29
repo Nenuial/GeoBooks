@@ -1,0 +1,374 @@
+# (PART) Demography {-}
+
+
+`r geovizr::chapter_image("../Resources/pictures/Demography/1__head")`
+# Statistics
+
+> *There are three kinds of lies: lies, damned lies, and statistics.*
+>
+> `r tufte::quote_footer('--- Mark Twain')`
+
+> *I only believe in statistics that I doctored myself.*
+>
+> `r tufte::quote_footer('--- Winston Churchill')`
+
+## Census
+\index{Census}
+
+A census is a practice involving the collection of data about the population of a state. It is a fairly common pratice today and there are evidence that there have been some censuses in Ancient Egypt and Ancient Greece already. A census yields data allowing for a clear picture of the population structure. Depending on the questions asked in the census, there will also be data answering questions needed for a political debate for example. In short, good governance needs informed governments.
+
+Since World War II, the United Nations Statistics Department encourages countries to conduct censuses at regular intervals (approximately every ten years). They regularly make recommendations on how to collect data and thus oversees the census programs. In 2005, 89 % of the world provided data to the United Nations [@weeks_population:_2007,pp. 109-114].
+
+Switzerland conducted its last general census in 2000. Since then, the federal administration has decided to abandon those large-scale censuses conducted every ten years and replaced them by information based on four pillars:
+
+1. Register survey
+1. Structural survey
+1. Thematic surveys
+1. Omnibus
+
+The first pillar is based on the records of the cantons and municipalities and provides most of the population statistics. The second pillar is based on a survey sent to a part of the population. Topics include: population, household, family, housing, work, mobility, education, language and religion. The third pillar is based on thematic surveys. Themes are annual and follow the same general topics as the second pillar. The fourth pillar provides information on current topics, such as politics or science [@office_federal_de_la_statistique_ofs_nouveau_2011].
+
+## Demographic indicators
+\index{Demographic indicators}
+
+In demography, the geographer depends on a number of statistical indicators to analyze a population. These indicators provide information on the status of a population and its evolution, past and future. Most of these indicators are based on data collected during a census.
+
+### Density
+\index{Density!population}
+
+Density is the measure of the number of people for a giver area; in its simplest form:
+
+```{definition demo-pop-density-definition, echo=TRUE, name='Arithmetic density (population density)'}
+Total number of people divided by the total land area. Usually expressed in people by km^2^.
+```
+
+\noindent There are also some other, more complex measures of density:
+
+```{definition demo-physio-density-definition, echo=TRUE, name='Physiological density'}
+Total number of people divided by the area of arable land.
+\index{Density!physiological}
+```
+
+```{definition demo-agro-density-definition, echo=TRUE, name='Agricultural density'}
+Total *rural* population divided by the amount of arable land. The rural population refers to the part of the population working in the agricultural sector.
+\index{Density!agricultural}
+```
+
+### Population changes
+
+To describe changes in the population, we uses different measures:
+
+```{definition demo-cbr-definition, echo=TRUE, name='Crude birth rate (CBR)'}
+The total number of live births in a year for every 1,000 people live in the society. Always expressed in per mil (‰).
+\index{Crude birth rate}
+\index{CBR|see{Crude birth rate}}
+```
+
+```{example demo-cbr-example, echo=TRUE}
+a rate of 7‰ means that there were 7 live births for one thousand people live in the society in a year.
+```
+
+```{definition demo-cdr-definition, echo=TRUE, name='Crude death rate (CDR)'}
+The total number of deaths in a year for every 1,000 people live in the society. Always expressed in per mil (‰).
+\index{Crude death rate}
+\index{CDR|see{Crude death rate}}
+```
+
+```{example demo-cdr-example, echo=TRUE}
+a rate of 15‰ means that there were 15 deaths for one thousand people live in the society in a year.
+```
+
+\noindent We can combine those two rates to get the rate of natural increase:
+
+```{definition demo-rni-definition, echo=TRUE, name='Rate of Natural Increase (RNI)'}
+The percentage by which a population grows in a year. *Natural* implies that this measure ignores migrations. Calculated by subtracting CDR from CBR.\vspace{.2cm}
+
+$RNI = CBR - CDR$
+\index{Rate of natural increase}
+\index{RNI|see{Rate of natural increase}}
+```
+
+```{example demo-rni-example, echo=TRUE}
+Switzerland had an RNI of 17.6‰ in 2015.^[Source: [OFS](http://www.bfs.admin.ch/bfs/portal/fr/index/themen/01/06/blank/key/01.html).]
+```
+
+\noindent The total fertility rate (TFR) is an indicator that is frequently used to express the population changes of a country. Despite its name, it is a number and not a rate ! The replacement fertility rate is the TFR needed so that women have just enough babies to replace themselves. The minimum replacement fertility rate is roughly 2.1.
+
+```{definition demo-tfr-definition, echo=TRUE, name='Total Fertility Rate (TFR)'}
+Average number of children a woman will have during child bearing years (15 to 49).
+\index{Total Fertility Rate}
+\index{TFR|see{Total Fertility Rate}}
+```
+
+\noindent The total fertility rate is calculated by adding the specific birth rates of every age group for women in child bearing years.
+
+```{example demo-tfr-example, echo=TRUE}
+Switzerland had a Total Fertility Rate of 1.51 in 2015.^[Source: [OFS](http://www.bfs.admin.ch/bfs/portal/fr/index/themen/01/06/blank/key/02.html).] The same year, France had a TFR of 1.96.^[Source: [INSEE](http://www.insee.fr/fr/themes/detail.asp?ref_id=bilan-demo&reg_id=0&page=donnees-detaillees/bilan-demo/pop_age3c.htm).]
+```
+
+### Population health
+
+There are quite a few indicators that can help measure the *health* of a population. A good indicator of a populations hygiene quality is the infant mortality rate and the child mortality rate.
+
+```{definition demo-imr-definition, echo=TRUE, name='Infant Mortality Rate'}
+Also known as **under-1 mortality rate**, it is the number of children who die by the age of 1, per 1,000 live births per year.
+\index{Infant mortality rate}
+```
+
+```{definition demo-cmr-definition, echo=TRUE, name='Child Mortality Rate'}
+Also known as **under-5 mortality rate**, it is the number of children who die by the age of 5, per 1,000 live births per year.
+\index{Child mortality rate}
+```
+
+```{example demo-imr-example, echo=TRUE}
+an infant mortality rate of 20‰ means that out of 1000 children born a given year, 20 died before they reached the age of one. In Switzerland the infant mortality rate was 3.9‰ in 2014.^[Source: [OFS](http://www.bfs.admin.ch/bfs/portal/fr/index/themen/01/06/blank/key/04/03.html).]
+```
+
+\noindent The infant mortality rate gives good indications about  hygiene conditions but life expectancy is a better indicator when looking at the health system in general.
+
+```{definition demo-lex-definition, name='Life expectancy'}
+Average number of years a newborn infant can be expected to live.
+\index{Life expectancy}
+```
+
+\noindent Life expectancy is an indicator that is calculated using specific death rates for age groups (usually one or five years). Life expectancy express the mean age of death for a fictive population to which one applies those death rates. This indicator reflects the current state of health of a country. That's why this indicators is usually not very accurate when one calculates the actual life expectancy for a given year of birth (also called cohort life expectancy); but this is only possible when every person of a given birth year is dead.
+
+### Development
+
+There are a number of development indicators. One of the most popular is the Human Development Index (HDI). It's a composite statistic developed by the UNDP.^[United Nations Development Programme.]
+
+```{definition demo-hdi-definition, name='Human Development Index (HDI)'}
+Composite index calculated using the following parameters:
+
+1. Life span
+1. Education
+1. Decent standard of living
+  
+\index{Human Development Index}
+\index{HDI|see{Human Development Index}}
+```
+
+\noindent The indicator used for life span is the life expectancy at birth. For the education we use two indicators. The average number of years in school for people older than 25 and the expected number of years in school for people still in the education system. The decent standard of living is measured using the GNI^[Gross National Income] per capita (PPP^[Purchasing power parity.] US\$). Each of those indicators is normalised and averaged: $$\text{Normalised indicator}=\frac{\text{actual value}-\text{smallest value}}{\text{largest value}-\text{smallest value}}$$
+
+\noindent The HDI is then calculated using a geometric mean: $\sqrt[3]{\text{I}_{\text{life span}}+\text{I}_{\text{education}}+\text{I}_{\text{GNI}}}$.
+
+In 2019, the World Bank introduced a new development index. One of the motivations was to shift the focus completely away from economic indicators. This new indicator focuses on the human "capital".
+
+```{definition demo-hci-definition, echo=TRUE, name='Human Capital Index (HCI)'}
+Composite index calculated using the following parameters:
+
+1. Survival
+1. Education
+1. Health
+
+\index{Human Capital Index}
+\index{HCI|see{Human Capital Index}}
+```
+
+\noindent Survival is measured using the share of children that survive past the age of 5. Education is measured using both a quantity and a quality indicator. For the quantity the number of expected years of schooling by the age of 18 is used. For the quality a harmonised test score is used. Health is measured using adult survival and healthy growth. The adult survival is based on the number of 15 year olds who survive past the age of 60. The healthy growth is measured using the share of children under the age of 5 who present stunting (slow growth).
+
+
+`r geovizr::chapter_image("../Resources/pictures/Demography/2__head")`
+# World population
+\index{World population}
+
+> *A finite world can support only a finite population; therefore, population growth must eventually equal zero.*
+>
+> `r tufte::quote_footer('--- Garrett Hardin')`
+
+
+## World population trends
+\index{Population trends!World}
+
+The figure \@ref(fig:demo-world-pop-plots) shows how the world population has evolved since 10'000 <span style="font-variant:small-caps;">bce</span>. Population only started to grow when mankind became sedentary and agriculture begins offering surpluses. The second big change in population trend occurs at the end of the 18^th^ Century.
+
+This second change in trend is brought by the Industrial Revolution.  Important changes in lifestyle and hygiene allow for a better life. The Medical discoveries made at the beginning of the 20^th^ Century improved life expectancy in developed countries. Initially, this development will cause an extremely rapid increase in population. In two centuries, the world population increased from less than one billion to over 6 billion people on Earth.
+
+If we look at the World Population Growth Rate (last graph in figure \ref{fig:demo-world-pop-plots}), we see that the highest growth rate of roughly 2.2% was reached in around the middle of the 60s. Since then, the growth rate has diminished. This is one of the first signs of a stabilisation of the world's population. Based on the medium projection of the United Nations, the world population is expected to peak around 2100.
+
+```{r demo-world-pop-plots, opts.label='geo.graph', fig.height=20, fig.cap='World population trends.'}
+geographer::df_demography_graph_world_population(geovizr::gvz_doc_theme())
+```
+
+## Population increase
+\index{Population increase!World}
+\index{Demographic Transition!theory of the}
+
+As shown in Figure \@ref(fig:demo-world-pop-plots), the world population increases sharply from the end of 18^th^ Century. This increase is largely attributed to the progress made during the industrial revolution in many different fields; mainly in terms of hygiene and living conditions. Those important changes, reflected in the demography of european countries by a sharp increase in population, led to the Theory of the Demographic Transition. In fact, more than one transition, it is a series of social and cultural transformations that operate together; often in the same order, but not necessarily. All these transitions make up the *Theory of the Demographic Transition* [@weeks_population:_2007,pp. 89-104]:
+
+```{r demo-transition, opts.label='fig', fig.cap='The demographic transition model'}
+knitr::include_graphics("pictures/Demography/2_demographic_transition_model.png")
+```
+
+In the first phase of the model, crude birth and mortality rates are high and vary greatly depending on harvest yields and epidemics. Most of mankind's history is spent at that stage.
+
+### The Health and Mortality Transition
+
+Health and mortality are often the first elements to change, especially in european countries, from the 19^th^ Century on: mortality rates decline and life expectancy increases. Both changes are the first stage of demographic transition, which corresponds to Phase II of the model (see Figure \@ref(fig:demo-transition)). Birth rates do not change at the same time. Therefore the first transition almost always results in a rapid increase in population leading to significant overpopulation.
+
+### The Fertility Transition
+
+The Fertility Transition sometimes precedes the Health and Mortality Transition, but in most cases it comes second. The increased number of children reaching adulthood motivates families to review the number of children conceived. This has as a direct result the decrease in fertility rates resulting in lower birth rates. We enter Phase III of the demographic transition model.
+
+### The Age Transition
+
+The first two transitions inevitably result in an ageing population. This transition is easily observed using a population pyramid (see box \@ref(prp:demo-pyramid)). This transition generates a demographic pressure that inevitably leads to social changes. These changes often involved a move towards a welfare state that can meet the challenges posed by an aging population.
+
+```{latex}
+\begin{flbox}
+```
+
+```{proposition demo-pyramid, echo = TRUE, name='Tool: the population pyramid'}
+\index{Population pyramid}
+
+A population pyramid is a dual-axis chart that uses an arithmetic scale on each axis.
+
+- The **vertical axis** features age groups with *sometimes*, for convenience, the corresponding birth year.
+- The **horizontal axis** is the population. Generally expressed in millions, but sometimes as a percentage of the total population in order to facilitate the comparison of populations of different sizes.
+- By convention, women are featured on the right and men on the left of the vertical axis.
+- Each bin represents the size of a one year age group (cohort). It is quite common for simplified population pyramids to have five-year cohorts.
+
+A population pyramid:
+  
+- **gives a good idea** about the structure of the population by age and sex for a given year;
+- **allows for comparisons** between genres and generations;
+- is not only the reflection of the population structure at one point in time: it also **reflects the population's evolution**.
+
+This type of chart is used for all kinds of populations - active population, immigrant population, at different scales from country to city neighbourhood. It is not only used in demography, but also for example in animal biology.
+
+To make a systematic and comprehensive reading of a pyramid, one can proceed in stages:
+
+1. Identify the basic elements
+    + Which continent, region, country?
+    + What year?
+    + What classification age groups?
+    + What units?
+1. Recognise the pyramid's form
+    + What is the pyramid's form?
+    + Is it regular or irregular?
+    + Are there bulges and bites?
+    + Is it symmetric or asymmetric?
+1. Formulate hypotheses
+    + Try to explain the bulges and bites: increase or decrease in births. What could they mean?
+    + If there are asymmetries try to explain them. Difference in life expectancy? War?
+1. Interpret the pyramid
+    + Recognise the form of the pyramid and try to link it with a phase of the demographic transition model.
+    + Build a general explanation for the pyramid's bulges and bites (if any) using your knowledge of the country's history.
+    + Predict the future evolution of the population from the observed structure.
+
+```
+
+```{latex}
+\end{flbox}
+```
+
+### The Migration Transition
+
+One of the consequences when the first two transitions don't happen at the same time is an important overpopulation. In the case of the developed countries, the population surplus has, in many cases, resulted in significant migrations. For Europe this migration was mainly to the Americas and Oceania (Australia and New Zealand).
+
+### The Urban Transition
+
+For European countries, it was easy to migrate the population surplus to areas of the world that were still sparsely populated. When the African and asian countries started their demographic transition, the bulk of the migration is from the countryside to cities. Urban areas usually thrive by absorbing those rural surpluses. Today the cities with the highest growth rates are in Africa and Asia. At the beginning of the 20^th^ Century, only about 14% of the population is urban; mainly in developed countries. Today this figure is estimated at more than 50%.
+
+### The Family and Household Transition
+
+Demographers, particularly in European countries have observed changes in the family structure since the end of World War II. These changes have led some to speak of a second demographic transition or sometimes Phase V of the demographic transition model. Indeed towards the end of the 20^th^ Century the fertility rate started to decrease in most European countries. Today, most of them are under the replacement fertility rate of 2.1. The factors responsible for this development are numerous. The most important ones include:
+
+- increased number of years of education, particularly for women;
+- increased age at mariage;
+- better access to contraception and better contraception methods;
+- changes in the social norm.
+
+
+`r geovizr::chapter_image("../Resources/pictures/Demography/3__head")`
+# Population policies
+\index{Population policies}
+
+> *The number of children is not growing any longer in the world. We are still debating peak oil, but we have definitely reached peak child.*
+>
+> `r tufte::quote_footer('--- Hans Rosling')`
+
+## Malthusianism
+\index{Malthusianism}
+
+Malthusianism is the term used for a policy which advocates population control. The term comes from the British economist and Reverend Thomas Robert Malthus (1766-1834). He became famous after publishing an essay entitled *An Essay on the Principle of Population* [@weeks_population:_2007,pp. 75-83].
+
+In his essay, Malthus expresses concern about the evolution of the world population. He explains that the population grows geometrically (read *exponentially*) while agricultural resources grow arithmetically (read *linearly*). He explains that a population can grow until it encounters a limit. For humans that limit is insufficient resources.
+
+## China: the *One-Child* policy
+
+The birth control policy implemented in China is certainly the most famous in the world. The name given to this policy, however, is misleading; Indeed, the policy implemented by the communist government is much more complex than just "one-child per couple". To understand the evolution of the demographic policy of China we must go back in time and look at the events in China since the Second World War.
+
+```{r demo-china-trends, opts.label='geo.graph', fig.height=12, fig.cap="China's demographic trends."}
+geographer::gph_demogram("China", geovizr::gvz_doc_theme())
+```
+\index{China!Population trends}
+
+### The 1950s
+In the fifties, China under Mao applies a policy encouraging large families. Communist ideology dominates and leaders are convinced that a strong state comes through a large population; more labor would be absorbed by the booming Chinese industry without any worries. Mao seeks to reform the country and those reforms include a collectivisation of agriculture and forced industrialisation. Mao's reform plan is called the *Great Leap Forward*.
+
+### The Great Leap Forward
+\index{China!Great Leap Forward}
+
+The reform was a fiasco. Expected agricultural surpluses are not met and in 1960 China is experiencing the worst famines in its entire history. The consequences of this famine are widespread. The government finally backed off and managed to save the country's industry from total collapse. From a demographic point of view, China recorded a significant decline in its birth rate. The impact was so significant that it can be seen on the world population growth rate (see 1960 in figure \@ref(fig:demo-world-pop-plots) part c.).
+
+### The 1960s and 1970s
+
+After the Great Leap Forward, China's birth rate in 1963 reached 43‰ and then declined until the end of the 70s (see figure \@ref(fig:demo-china-trends)). This decrease is mainly attributed to a shift in government policy from large families to smaller families with two to three children.
+
+In the late seventies, the demographic changes are worrying the government; especially as the large generations born in the early sixties are reaching childbearing age. Faced with these challenges, the government decides to set up the largest demographic policy ever seen. The new policy is officially called the *family planning policy*. Initially this policy is intended for one generation (25 years).
+
+### The *family planning policy*
+
+One of the most famous measure of that policy is the restriction to one child per couple for the Chinese ethnic majority: the Han. Although this restriction knows many exceptions, for example for couples who lost a child or who have a disabled child, couples who deviate from the new law may face important financial penalties.
+
+In fact, the implementation of the family planning policy varies greatly from one province to another. Urban provinces are stricter than the rural provinces where a second child is often allowed.
+
+### The demographic consequences
+
+It is impossible to ascertain what China's population development would have been without the family planning policy, but it undoubtedly has had a profound impact on the Chinese people [@attane_les_2005].
+
+#### The gender imbalance
+
+One of the most visible consequences is the imbalance between boys and girls at birth. The natural ratio is usually about 105 boys for 100 girls. In China in 2015, that proportion is estimated at 115.2 boys to 100 girls for children under the age of one^[Source: \href{http://esa.un.org/unpd/wpp/Download/Standard/Population/]{UN WPP}.}.
+
+#### The *black children*
+
+Missing from the statistics, the hidden children, or *black children* as they are known in China, are estimated at over 8 million in the 2000 census [@zhou_uncovering_2005]. These people are excluded from all official records. They do not have access to most public services. They cannot be treated in a hospital, cannot travel and cannot work legally.
+
+#### The 4:2:1 problem
+
+The one child policy also had a significant effect on the family structure. More and more young Chinese are left with four grandparents and two parents to care fore, hence the name *4:2:1 problem* [@hesketh_effect_2005]. Once they recognised the problem, the authorities have allowed couples where both parents are only children to have two children themselves.
+
+### The future of the *family planning policy*
+
+In December 2015, the Standing Committee of the National People's Congress changed the law and allowed the Chinese affected by the one-child policy to have two children. The aging population and increasing weight on the economy have led to this decision. This decision marks the beginning of a relaxation of the largest population control experiment in the world.
+
+China's population was affected by 35 year of *family planning policy*. It is impossible to say what the demographics of that country would be if the Chinese leaders had not implemented these measures in 1980. China will however be confronted with the effects of these measures for many years still.
+
+## France: a pro-natalist policy
+\index{France!pro-natalist policy}
+
+France is an exception in the European context. It is one of the few countries on the *Old Continent* to have a fertility rate approaching 2 in 2014 (with Ireland). This particular fact for a country of the European Union can be explained by historical reasons that have made France a country with a pro-natalist policy [@rosental_intelligence_2003].
+
+### Before the Industrial Revolution
+
+As in all pre-industrial societies, the fertility rate in France before the Industrial Revolution is high. Children are a social resource: they are an *old-age insurance*. This is still the case in many countries that have no social insurance system.
+
+### The social changes of the 19^th^ Century
+
+With the demographic transition, the fertility rate gradually decreases throughout Europe. The Industrial Revolution transformed the economic landscape in many countries. Children are no longer used as labor on the family farm, but work in factories or in the mines. The financial benefits of this *child resource* decrease and the social insurance children offered previously is in danger of collapsing.
+
+The "welfare issue" becomes more and more important in countries like Britain and France, but nobody seems to be able to come up with a satisfying answer.
+
+### The welfare state
+
+It's not until the beginning of the 20^th^ Century that we start seeing the first elements of what we now call *the welfare state*. Governments start intervening in family issues and they begin investing in areas such as education or social insurances. The state takes care of a part of the exchange between generations with the creation of retirement pensions financed by the active population.
+
+In France after World War II, the community of family associations quickly finds political support and they push for larger families. In the postwar period, France's CBR rises again, in part because of an important baby boom, but also because of the political will to support families.
+
+France distinguishes itself from other European countries because it has kept an important political sensitivity to family matters and French governments, both left and right, continue to support families. Today, this continued commitment to families can be seen in France's population pyramid (see figure \@ref(fig:demo-pyramide-france)). It doesn't have the typical form we see with other European countries.
+
+```{r demo-pyramide-france, opts.label='geo.graph', fig.height=14, fig.cap='Population pyramid of France - 2020'}
+geographer::gph_pyramid("France", 2020, geovizr::gvz_doc_theme())
+```

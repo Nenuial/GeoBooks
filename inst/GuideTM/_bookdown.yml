@@ -1,0 +1,6 @@
+book_filename: "GuideTM"
+delete_merged_file: true
+rmd_subdir: ["chapters/"]
+language:
+  ui:
+    chapter_name: "Chapter "

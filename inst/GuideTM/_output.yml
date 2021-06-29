@@ -1,0 +1,5 @@
+geovizr::gvz_bs4_book:
+  theme:
+    primary: "#0f3b06"
+geovizr::gvz_book:
+  keep_tex: true

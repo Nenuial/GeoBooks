@@ -1,0 +1,289 @@
+# (PART) Meteorology {-}
+
+```{r meteo-tikz-setup, echo=FALSE, include=FALSE}
+knitr::read_chunk(here::here("inst/Resources/diagrams/meteorology.Rmd"))
+```
+
+`r geovizr::chapter_image("../Resources/pictures/Meteorology/1__head")`
+# The Atmosphere
+
+> *The size of Earth's atmosphere relative to Earth is the same as the skin of an Apple relative to the Apple.*
+>
+> `r tufte::quote_footer('--- Neil deGrasse Tyson')`
+
+## The evolution of the Atmosphere
+
+There is no clear consensus about the exact origin of Earth's Atmosphere. What is certain is that our current Atmosphere is the product of a very long evolution. Earth has most certainly lost its "first" atmosphere (mainly composed of hydrogen) into space. The second atmosphere is probably the result of a process of "outgassing" (volanic erruptions) and meteorite impacts. The main gases in this atmosphere must have been carbon dioxide (CO), carbon monoxide (CO) and nitrogen (N). The progressive replacement of CO with oxygen (O) started with the appearance of life sometime around 3.5 Ga^[*Giga annum*: 1 Ga equals 1·10^9^ years] (@ahrens_essentials_2014, p.9; @kasting_earths_1993; @rollinson_early_2009, pp. 175-214).
+
+## The composition of the Atmosphere
+
+Our atmosphere is composed essentially of two main gases, nitrogen and oxygen, along with traces of a number of other gases (see table \@ref(tab:atmosphere-composition)). The concentration of the different gases is mostly constant up to about 80 km. The two exceptions are ozone and water vapour that present large variations in concentration.
+
+```{r atmosphere-composition, opts.label='table'}
+tibble::tribble(
+  ~"Component",                 ~"Symbol",  ~"Volume \\% (dry air)", ~"Molecular weight",
+  "Nitrogen",                   "N$_2$",     78.08,                 28.02,
+  "Oxygen",                     "O$_2$",     20.95,                 32.00,
+  "Argon$^{\\ast\\ddagger}$",   "Ar",       0.93,                  39.88,
+  "Carbon dioxide",             "CO$_2$",    0.037,                 44.00,
+  "Neon",                       "Ne",       0.0018,                20.18,
+  "Helium$^{\\ast\\ddagger}$",  "He",       0.0005,                4.00,
+  "Ozone$^\\dagger$",           "O$_3$",     0.00006,               48.00,
+  "Hydrogen",                   "H$_2$",     0.00005,               2.02,
+  "Krypton$^\\ddagger$",        "Kr",       0.0011,                NA_real_,
+  "Xenon$^\\ddagger$",          "Xe",       0.00009,               NA_real_,
+  "Methane$^\\S$",              "CH$_4$",    0.00017,               NA_real_
+) |> 
+  kableExtra::kbl(caption = "Composition of the atmosphere.", booktabs = T, linesep = "", escape = FALSE) |> 
+  kableExtra::footnote(
+    symbol = c("Decay products of potassium and uranium.", "Recombination of oxygen.", "Inert gases.", "At surface.")
+  )
+```
+
+## The layers of the Atmosphere
+
+The atmosphere can be divided into a number of horizontal layers based on their temperature profile. Figure \@ref(fig:meteo-atmosphere-layers) shows a general representation of those layers with average temperature depending on altitude or pressure. This vertical profile can vary depending on the latitude. The altitudes are lower as you get closer to the poles and higher around the equator (@ahrens_essentials_2014, pp. 9-15; @barry_atmosphere_2010, pp. 32-36).
+
+```{r meteo-atmosphere-layers, opts.label='geo.tikz', fig.cap='The layers of the atmosphere'}
+```
+
+### The Troposphere
+
+The first layer from the ground up is called the troposphere. It's in this layer that most of the weather phenomena are taking place. It contains about 75 % of the mass of all the molecules of the atmosphere. It also contains the major part of water vapour found in the atmosphere. The temperature goes down at an average rate of about 6.5°C/km. The limit at the top of the troposphere where the temperature gradient stabilizes is called the tropopause.
+
+### The Stratosphere
+
+Second layer in the atmosphere, the stratosphere is much more stable than the troposphere. It features little vertical air movements due to its rising temperature gradient with altitude. This temperature increase is due to the ozone gas which is present in higher density than anywhere else in the atmosphere. Ozone absorbs the ultraviolet from the incoming sunlight. The highest density of ozone in the stratosphere is reached at about 22 km.
+
+### The Mesosphere
+
+This third layer reaches from about 50 km to 90 km. Temperature falls rapidly in this layer as the atmosphere becomes thinner and thinner. The temperature drop ends at the mesopause.
+
+### The Thermosphere
+
+As mentioned before, above 80 km the general concentration of atmospheric gases no longer holds true. While nitrogen and oxygen are still the main gases, atomic oxygen (O) becomes dominant above 250 km. As in the stratosphere, the absorption of extreme ultraviolet radiation explains the temperature increase.
+
+
+`r geovizr::chapter_image("../Resources/pictures/Meteorology/2__head")`
+# The Dynamics of the Atmosphere
+
+> *It's a pretty widely accepted notion that the atmosphere is a ridiculously complex system, and the best we can do with our models is a rough approximation.*
+>
+> `r tufte::quote_footer('--- Jamais Cascio')`
+
+## The atmospheric drive
+
+### The Solar irradiance
+
+The main source of energy of our planet comes from the Sun. The amount of energy received is, however, not the same at all latitudes. While the annual outgoing energy (infrared radiation lost to space) is roughly the same everywhere, the amount of incoming radiation from the Sun is much higher around the equator than at the poles.
+
+The Equator shows a net gain of energy where the Poles have a net loss. This difference is the key factor explaining the dynamics of the atmosphere. The atmosphere, along with the oceans, allows to compensate a part of this energy imbalance.
+
+The temperature imbalance is the starting point for the different processes we can observe in the atmosphere. Every movement in the atmosphere, vertical and horizontal, is a consequence of the imbalance. Figure \@ref(fig:atmo_dynamics) summarizes the different dynamic processes of the atmosphere.
+
+```{r meteo-atmosphere-dynamics, opts.label='geo.tikz', fig.cap='Dynamics of the atmosphere'}
+```
+
+### The energy balance
+
+The Earth-Atmosphere system maintains a careful balance between input and output energy (see figure \@ref(fig:meteo-energy-balance)). The energy input comes from the Sun, on average this represents 342 W·m^-2^. In order for our planet to maintain its surface temperature, the amount of energy lost to space has to be equivalent.
+
+This, of course, is never exactly the case. Studies show that the imbalance of input and output is about +0.6 W·m^-2^ (uncertainty ranges from +0.2 W·m^-2^ to +1.0 W·m^-2^) (@ipcc_climate_2014, pp. 181, 264-265). Global warming is the direct consequence of this imbalance.
+
+```{r meteo-energy-balance, opts.label='geo.tikz', fig.cap='Energy balance'}
+```
+
+## The global atmospheric circulation
+
+The global atmospheric circulation is, as mentioned before, one of the main systems to balance the energy input on our planet. Hot air rises at the equator and moves towards the poles. The movement of large air masses is influenced by the Coriolis force (see box \@ref(prp:meteo-coriolis-box)).
+
+The movement of the air is divided into three big circulation cells (see figure \@ref(fig:meteo-global-atmospheric-circulation)). The Hadley and Polar cells are thermally direct cells. They are a direct consequence of the temperature differential. The Ferell cell is indirect: it is driven by the two other cells.
+
+Because of the Coriolis force the surface winds are generally easterlies in the Hadley and Polar cells and westerlies in the Ferell cell. 
+
+```{r meteo-global-atmospheric-circulation, opts.label='geo.tikz', fig.cap='The global atmospheric circulation'}
+```
+
+```{r meteo-coriolis, include=FALSE, opts.label='geo.tikz', fig.cap='The global atmospheric circulation'}
+```
+
+```{latex}
+\begin{flbox}
+```
+
+```{proposition meteo-coriolis-box, echo = TRUE, name='Concept: The Coriolis force'}
+The Coriolis force is an apparent force due to the rotation of our planet. When we consider the movement of the objects on our planet, we do so from the perspective of a rotating frame of reference (we are, ourselves, on the surface of a rotating sphere). Therefore the objects "appear" to be deflected.
+
+![](DF-Geo_files/figure-html/meteo-coriolis-1.png)
+
+*The Coriolis Effect*
+
+In meteorology the Coriolis force plays an important role. The large movement of air masses are always influenced by the Coriolis force. In the northern hemisphere all movement is deflected to the right. In the southern hemisphere the deflection goes to the left.
+	
+The Coriolis force is expressed as follows:
+
+$$F_{c} = 2m\cdot \Omega \cdot \sin (\varphi) \cdot v$$
+
+Where $\Omega$ is the angular speed of Earth, $\varphi$ the latitude. The strength of the Coriolis force depends on the mass, the latitude and the speed of the movement. The closer to the equator, the weaker the Coriolis force.
+
+```
+
+```{latex}
+\end{flbox}
+```
+
+## The atmospheric movements
+
+### Horizontal movements
+
+The horizontal movement of air masses in the atmosphere is the result of differences in pressure. The air moves from high pressure cells towards low pressure cells. As soon as the air starts to move the Coriolis force also applies. The results of the action of the pressure gradient (differences in pressure) and the Coriolis force is geostrophic wind. Figure \@ref(fig:meteo-geostrophic-wind) explains this situation:
+
+1. The air parcel starts to move because of the pressure gradient force.
+1. As soon as the air parcel, a Coriolis force applies. The Coriolis force deflects the parcel of air to the right (northern hemisphere).
+1. The faster the air parcel moves, the stronger the Coriolis force gets.
+1. When the Coriolis force and the pressure gradient force are balanced the air movement is called "geostrophic wind". The movement is then parallel to the pressure lines.
+
+```{r meteo-geostrophic-wind, opts.label='geo.tikz', fig.cap='Geostrophic wind'}
+```
+
+The geostrophic wind explains how the air masses flow according to the pressure centres. This holds true for higher altitudes because friction forces are negligible, closer to the ground the friction force slows the air movement slightly. The result of this is a slight movement towards low pressure cells. Figure \@ref(fig:meteo-pressure-circulation-north) shows how the wind blows in the northern hemisphere around pressure cells. In the southern hemisphere the movement is reversed.
+
+```{r meteo-pressure-circulation-north, opts.label='geo.tikz', fig.cap='Northern hemisphere air movement'}
+```
+
+### Vertical movements
+
+Vertical movements in the atmosphere are due to differences in density (hot air rises). Whenever a parcel of air moves vertically, the pressure and volume change. The perfect gas law tells us that if there is a difference in pressure and volume, the temperature of the parcel must change. For air this is called the *adiabatic lapse rate*. Depending on the amount of water vapour in a parcel of air, this lapse rate is higher or lower.
+
+The following lapse rates can be used as "rule of thumb lapse rates":
+
+- for dry air (DALR): 10°C/km
+- for saturated air (SALR): 6°C/km  
+
+#### The Environmental Lapse Rate
+
+Everywhere the atmosphere presents a natural lapse rate called the environmental lapse rate (ELR). This lapse rate is the temperature gradient measured using a weather balloon.
+
+If the ELR is low, the atmosphere is considered stable: all vertical air movements are "stopped" because the adiabatic lapse rates are higher than the ELR. This means that when a parcel of air moves vertically it finds itself inevitably surrounded by warmer air. Therefore the parcel is "pushed" down: physically speaking, the gravity force on the air parcel exceeds the Archimedes force.
+
+If the ELR is high, the atmosphere is considered unstable: the adiabatic lapse rates are lower than the ELR and vertical air movement can occur on its own. When an air parcel starts to move vertically, it can find itself surrounded by colder air and it will continue to rise on its own as long as the adiabatic lapse rate is lower than the ELR.
+
+Figure \@ref(fig:meteo-adiabatic-dynamic) shows what happens when we have an ELR of 9°C/km: a parcel of air resists the rising movement as long as the adiabatic lapse rate is higher (as long as the air is not saturated we have the DALR, therefore 10°C/km). When the air reaches saturation (*condensation level*) the adiabatic lapse rate changes to 6°C/km (SALR). After a few hundred metres, the temperature of the air parcel is equal to the environment and the parcel will continue to rise on its own. It has reached the *free convection level*.
+
+```{r meteo-adiabatic-dynamic, opts.label='geo.tikz', fig.cap='Vertical air movements'}
+```
+
+The helicopter in the figure represents a lifting mechanism. It means that the parcel of air doesn't rise on its own. In nature there are many different lifting mechanisms.
+
+## The Lifting Mechanisms {#meteo-lifting-mechanisms}
+
+At the beginning of most vertical movements there is a "mechanism" that lifted the air in one way or another. Mose of the time it's a horizontal movement that encounters some sort of obstacle which results in a vertical movement of the air.
+
+The following are the main lifting mechanisms encountered:
+
+- orographic uplift;
+- frontal lifting;
+- convergence;
+- localized convection.
+
+`r geovizr::chapter_image("../Resources/pictures/Meteorology/3__head")`
+# The Water in the Atmosphere
+
+> *Between earth and earth's atmosphere, the amount of water remains constant; there is never a drop more, never a drop less. This is a story of circular infinity, of a planet birthing itself.*
+>
+> `r tufte::quote_footer('--- Linda Hogan')`
+
+## The Water Cycle
+
+After nitrogen and oxygen, water vapour is the most frequent gas in the atmosphere. Without it, live would not be possible on Earth. The water cycle (figure \@ref(fig:meteo-water-cycle)) is a never ending exchange of water between the ocean and the atmosphere. The percentage of water present in the atmosphere at any given time is very low: only about 0.025% of Earth's fresh water reserve or 15000 m^3^ of water. Most of our freshwater reserves are either frozen (Antarctic and Greenland) or underground (@barry_atmosphere_2010, pp. 78-79).
+
+```{r meteo-water-cycle, opts.label='geo.tikz', fig.cap='The water cycle'}
+```
+
+## Measuring water vapour
+
+There are several ways to express the amount of water vapour in the air. Some are more frequently used in meteorology than others:
+
+- vapour pressure:  
+part of the total atmospheric pressure due to water vapour;
+- absolute humidity:  
+density of water vapour: number of grams of water vapour contained in a cubic metre of air;
+- relative humidity (RH):  
+amount of water vapour in the air to the maximum possible at the current temperature;
+- specific humidity:  
+mass of water vapour existing in a given mass of air;
+- mixing ratio:  
+mass of water vapour relative to the mass of the other gases of the atmosphere;
+- dew point:  
+temperature at which saturation occurs (see box \@ref(prp:meteo-dew-point-box)).
+
+```{r meteo-dew-point, include=FALSE, opts.label='geo.tikz', fig.cap='The dew point'}
+```
+
+```{latex}
+\begin{flbox}
+```
+
+```{proposition meteo-dew-point-box, echo = TRUE, name='Concept: The Dew point'}
+The dew point is a common measure for water vapour used in meteorology. The dew point expresses the temperature at which a certain mass of air reaches saturation. Indirectly this tells us the absolute amount of water vapour present. The dew point can never be above the current air temperature. If the temperature drops below the dew point, water condenses and the dew point drops with the air temperature as water vapour is lost.
+
+![](DF-Geo_files/figure-html/meteo-dew-point-1.png)
+
+```
+
+```{latex}
+\end{flbox}
+```
+
+## Fogs
+
+One of the manifestations of water vapour in the atmosphere is fog. A fog forms when a mass of air (close to the ground) reaches saturation and small droplets of liquid water form. There are a number of different ways in which a mass can reach saturation, but all of them either mean a drop in temperature or a rise in the amount of water vapour.
+
+### Radiation Fog
+
+Radiation fog forms during the night. For this type of fog the weather needs to be clear. If there is a cloud coverage, the water vapour in the clouds acts as a greenhouse gas and prevents the infrared radiation from escaping into space. If the ground cools down enough during the night, the temperature of the layer of air just above the ground will go down. If this drop in temperature bring the layer of air to the dew point, the water vapour condenses and a fog appears.
+
+### Advection fog
+
+There are two types of advection fog: warm and cold.
+
+#### Warm advection fog
+
+The warm advection fog happens when a warm mass of air moves over a colder region (usually a body of water). The contact between the cold ground and the mass of air cools the air just slightly and if the dew point is reached the water vapour condenses.
+
+#### Cold advection fog
+
+The cold advection fog happens when a cold mass of air moves over a warmer body of water (a difference of about 10°C is necessary), the small amount of evaporation from the body of water brings the cold mass of air to saturation and water vapour starts condensing.
+
+### Upslope fog
+
+Upslope fog happens frequently in mountainous regions. When a mass of air is forced to rise because of the relief (see section \@ref(meteo-lifting-mechanisms): The Lifting Mechanisms), the air cools down and when it reaches its dew point, the water vapour condenses.
+
+### Precipitation Fog
+
+This type of fog happens in warm regions of our planet. This fog forms when the rain from a cloud above falls through a layer of air that is already close to saturation. A small amount of water evaporates from the rain drops and this is enough to bring the layer to saturation.
+
+## Clouds
+
+Clouds form when a mass of air reaches saturation. This process always happens when air rises and cools down (adiabatic expansion). There are different types of clouds depending on the altitude. We distinguish four main types (see figure \@ref(fig:meteo-clouds)):
+
+- low altitude clouds;
+- middle altitude clouds;
+- high altitude clouds;
+- clouds with vertical development (cumulus and cumulonimbus).
+
+
+```{r meteo-clouds, opts.label='geo.tikz', fig.cap='The main cloud types'}
+```
+
+## Precipitation
+
+Meteorologist still don't fully understand how the process from cloud droplets (about 20µm to 100µm in diameter) to rain drops (about 2mm} in diameter) works. There are two main processes that are believed to be responsible for precipitations: coalescence and the Bergeron process.
+
+### Coalescence
+
+Coalescence is the process by which cloud droplets collide and merge into larger droplets. Given enough collisions, larger droplets and finally rain drops start to form. When the rain drops are large enough, the forces of gravity win against the atmospheric currents and it starts to rain.
+
+### The Bergeron Process
+
+At sub-zero temperatures, liquid water droplets can remain in their liquid state (this is called supercooling). Supercooled droplets, however, evaporate faster than snow crystals. This leads to the formation of larger and larger snow flakes while the supercooled water droplets evaporate. Once the snow flakes are large enough, just like the rain drops, gravity takes over and the snow flakes falls to the ground. Depending on the temperature, the snow flake might melt and end its course to Earth as a rain drop.

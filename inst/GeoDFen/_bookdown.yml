@@ -1,0 +1,8 @@
+book_filename: "DF-Geo"
+delete_merged_file: true
+rmd_subdir: ["chapters/"]
+language:
+  label:
+    prp: 'Box. '
+  ui:
+    chapter_name: "Chapter "

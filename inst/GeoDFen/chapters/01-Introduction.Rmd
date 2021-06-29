@@ -1,0 +1,138 @@
+---
+nocite: |
+  @clifford_key_2008
+---
+
+\nocite{clifford_key_2008}
+
+# (PART) Introduction {-}
+
+`r geovizr::chapter_image("../Resources/pictures/Introduction/1__head")`
+# The origins of Geography
+
+> *History rhymes, but geography endures.*
+>
+> `r tufte::quote_footer('--- Andrew C. Katen')`
+
+## The histories of Geography
+
+There isn't one history of geography, but many different histories. History, like geography, is a question of interpretation. In this chapter I aim to give you a short introduction with a few elements of a western history of Geography. These elements are part of the heritage that makes up our modern geography as we know it. 
+
+## *Prehistorical* Geography
+
+The beginning of a field of study like Geography cannot be traced precisely. We can imagine that a form of geographical thought has existed since the first civilizations.
+
+The first to define Geography as a field of study, as far as we know, are the Greeks. That makes them the first *geographers* [@boyle_human_2014,pp. 22-24].
+
+## The Greco-Roman Period
+
+The word *Geography* is often attributed to the Greek scholar Eratosthenes. Eratosthenes's (ca. 275-195 <span style="font-variant:small-caps;">bce</span>) interest is in the world around him. Using an ingenious method, he measured the Earth's circumference. He also invented a geographic coordinate system allowing him to map the known world.
+
+A few centuries later, Ptolemy (ca. 90-168 <span style="font-variant:small-caps;">ce</span>) expanded on Eratosthenes work and developed new cartography tools. Among other things, he created the first map projection: a process that allows the transfer of points on a three-dimensional globe onto a two-dimensional map.
+
+## The Renaissance of Geography
+
+After a lean period of relatively few scientific discoveries for Europe, the geographers of the Renaissance rediscover the knowledge of Greek scholars and there is a renewed interest in geographical questions. The Renaissance is marked by an Age of Discovery and Geography will play a leading role in the European exploration of the world.
+
+Those explorations from the 16^th^ Century on will accumulate a significant amount of data through travelogues, scientific books, field diaries, etc. [@heffernan_histories_2008].
+
+## The Geography of Empires
+
+Towards the end of the 18^th^ Century geographers such as Alexander von Humboldt and Carl Ritter recognize the important potential of the data accumulated since the 16th century. They lay the foundations of what is now considered modern Geography in Europe. Carl Ritter will also be one of the leading figures of environmental determinism.
+
+It is also in that period that we see the creation of the first Geographical Societies. Von Humboldt and Ritter established the *Gesellschaft für Erdkunde zu Berlin*. These Societies have been particularly influential when it came to establishing geography as an academic branch.
+
+The 19^th^ century also marked the height of colonial expansion and imperialist European powers. Geography, and especially mapping, became a crucial discipline in the race for land.
+
+## Modern Geography
+
+During the 20^th^ century the descriptive geography of the previous centuries is put into question. Several new trends are emerging such as quantitative geography and critical geography. The various fields of geography are expanding and the discipline itself becomes one of the few academic branches that is both a natural and a social science (see figure \@ref(fig:intro-fields)).
+
+```{r intro-fields, opts.label='fig', fig.cap='The different fields of modern geography (not exhaustive)'}
+knitr::include_graphics("pictures/Introduction/1_geography_fields_en.png")
+```
+
+
+`r geovizr::chapter_image("pictures/Introduction/2__head_en")`
+# The concepts of Geography
+
+> *Everywhere's been where it is ever since it was first put there. It's called geography.*
+>
+> `r tufte::quote_footer('--- Terry Pratchett')`
+
+## What is Geography?
+As mentioned in the first chapter, Geography originates as the exploration of the world by humans. Today Geography is everywhere: populations, migrations, climate, geopolitical tensions, urban development, elections, epidemics, … All examples of the various elements geographers are faced with today.
+
+A definition of geography:
+
+> *Geography, the study of the diverse environments, places, and spaces of the Earth's surface and their interactions.*
+>
+> `r tufte::quote_footer('--- Encyclopædia Britannica')`
+
+Geography is therefore interested in different processes, both physical and human happening on Earth. Physical geography focuses on natural processes that govern our planet and the effects that these can have on the environment and on humans. Human Geography focuses on the interactions between man and his environment (real or virtual) and the processes that govern these exchanges.
+	
+## The concepts
+
+Like all academic subjects, Geography uses specific concepts and vocabulary. These concepts can have a different meaning or scope depending on whether you are using them in physical or human geography.
+
+The purpose of this chapter is not to provide an exhaustive list of the concepts of Geography, but to present and briefly explore some of the most important ones. Some of these concepts are specific to geography and others have elements in common with other academic subjects.
+
+### Space
+
+*Space* is one of the key concepts of geography. We can consider the *Space* as the object of study of Geography. It is not a simple concept and cannot be explained easily. The concept of *Space* as an object of study of geography is to be understood in a broad sense. To demonstrate I will use the example of @thrift_space:_2008 from his essay about *Space*: the *space of measurement*.
+
+Today, our use of localization technologies (GPS) is almost constant. Whether consciously or unconsciously. These technologies are the result of many inventions and standards that allow us to express the position of someone or something one our planet in a consistent and coherent way. What may seem  easy and common today is not necessarily the case. That simple act of looking at a mobile phone to get your position is only possible because of the accumulation of centuries of knowledge.
+
+The notion of *Space* in Geography is a construct. It allows us to define the boundaries of the set of study for which we are observing, analyzing and predicting the various processes.
+
+### Place
+
+Once the set of study is defined, an important concept of Geography is *Place*. There are three meanings to this concept: place as a location, as sense of place and place as a locale [@castree_place:_2008,p. 155].
+
+The first of these three meanings is probably the easiest to understand. In each *space* we can distinguish several *places*; each is a point of a set. The simplest interpretation is that of coordinates: every location has a set of coordinates representing a point on the surface of the planet. Neuchâtel for example has the coordinates 47° N and 6° 56' E.
+
+The second meaning of place refers to the connection between an individual (or a group of individuals) and a portion of space. The sense of belonging to one's hometown is an example of that.
+
+The final significance of the place refers to the place as an environment. A social construct; a portion of the space in which the studied interactions are observed at a certain scale.
+
+### Scale
+
+Scale is another one of the key concepts of Geography, both physical and human. The notion of scale appears relatively naturally in the context of mapping:  the expression of the relationship between the actual distance and the represented distance must be expressed one way or another.
+
+In human geography it is not always necessary to express the scale with precision. The notion of scale refers more to a hierarchical structure. Observations or processes happen at a regional, national or global scale, for example. The number of levels depends entirely on the complexity one needs.
+
+
+`r geovizr::chapter_image("../Resources/pictures/Introduction/3__head")`
+# Geography's tools
+
+> *Geography is the only art where the latest works are always the best.*
+>
+> `r tufte::quote_footer('--- Voltaire')`
+
+## Data in Geography
+
+Geographers use many tools to investigate, analyze and explain the various processes they study. As for the concepts, this is not an exhaustive list of tools used in Geography. We can generally divide the data used in geography into two main categories: qualitative and quantitative data.
+
+### Qualitative data
+Qualitative data can come from an observation or an interview, for example. It is usually descriptive. This type of data is frequently used in human geography. Among the tools used to collect qualitative data, we can mention photography, interviews or seminar discussions.
+
+### Quantitative data
+Quantitative data can come from a variety of sources. It is numerical. Physical geography uses mostly quantitative data, but it is also frequently used in human geography. Temperature log, a country's population census, a satellite altimetry analysis: all examples of quantitative data used in geography.
+
+## Data visualization
+Data collection is only the first step of a geographical study. Data is then processed and visualized in different forms.
+
+To process the quantitative data geographers use statistical tools, like many other sciences do too. This allows for a visualization of data in different forms such as a table or a graph.
+
+### Specific tools
+Other than the usual graphs such as a histogram or a scatter plot, geography uses a number of specific visualization *tools*. Here are some examples:
+
+#### The map
+Undoubtedly Geography's tool par excellence. Cartography (the science of maps) is an art in itself. For a long time Geography *was* the science of maps. Maps remains one of the main tools used in Geography to represent data in a spatial context. There are many different kinds of maps: physical maps, political maps, statistical maps, etc.
+
+#### The population pyramid
+The population pyramid is a special type of histogram used to represent the structure of a population. Although it's also used in biology, the population pyramid is one of the important tools for the geography of populations.
+
+#### The climograph
+This is another specific graph of Geography. The climograph is a combination of charts that can express the particular climate of a given region.
+
