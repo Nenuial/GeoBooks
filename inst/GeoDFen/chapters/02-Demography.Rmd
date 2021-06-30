@@ -330,7 +330,7 @@ It is impossible to ascertain what China's population development would have bee
 
 #### The gender imbalance
 
-One of the most visible consequences is the imbalance between boys and girls at birth. The natural ratio is usually about 105 boys for 100 girls. In China in 2015, that proportion is estimated at 115.2 boys to 100 girls for children under the age of one^[Source: \href{http://esa.un.org/unpd/wpp/Download/Standard/Population/]{UN WPP}.}.
+One of the most visible consequences is the imbalance between boys and girls at birth. The natural ratio is usually about 105 boys for 100 girls. In China in 2015, that proportion is estimated at 115.2 boys to 100 girls for children under the age of one^[Source: [UN WPP](http://esa.un.org/unpd/wpp/Download/Standard/Population/).].
 
 #### The *black children*
 
@@ -370,5 +370,9 @@ In France after World War II, the community of family associations quickly finds
 France distinguishes itself from other European countries because it has kept an important political sensitivity to family matters and French governments, both left and right, continue to support families. Today, this continued commitment to families can be seen in France's population pyramid (see figure \@ref(fig:demo-pyramide-france)). It doesn't have the typical form we see with other European countries.
 
 ```{r demo-pyramide-france, opts.label='geo.graph', fig.height=14, fig.cap='Population pyramid of France - 2020'}
-geographer::gph_pyramid("France", 2020, geovizr::gvz_doc_theme())
+if (knitr::is_html_output()) {
+  geographer::gph_highcharter_pyramid("France", 2020)
+} else if (knitr::is_latex_output()) {
+  geographer::gph_pyramid("France", 2020, geovizr::gvz_doc_theme())
+}
 ```
