@@ -79,7 +79,7 @@ The main source of energy of our planet comes from the Sun. The amount of energy
 
 The Equator shows a net gain of energy where the Poles have a net loss. This difference is the key factor explaining the dynamics of the atmosphere. The atmosphere, along with the oceans, allows to compensate a part of this energy imbalance.
 
-The temperature imbalance is the starting point for the different processes we can observe in the atmosphere. Every movement in the atmosphere, vertical and horizontal, is a consequence of the imbalance. Figure \@ref(fig:atmo_dynamics) summarizes the different dynamic processes of the atmosphere.
+The temperature imbalance is the starting point for the different processes we can observe in the atmosphere. Every movement in the atmosphere, vertical and horizontal, is a consequence of the imbalance. Figure \@ref(fig:meteo-atmosphere-dynamics) summarizes the different dynamic processes of the atmosphere.
 
 ```{r meteo-atmosphere-dynamics, opts.label='geo.tikz', fig.cap='Dynamics of the atmosphere'}
 ```
