@@ -214,11 +214,8 @@ The Fertility Transition sometimes precedes the Health and Mortality Transition,
 
 The first two transitions inevitably result in an ageing population. This transition is easily observed using a population pyramid (see box \@ref(prp:demo-pyramid)). This transition generates a demographic pressure that inevitably leads to social changes. These changes often involved a move towards a welfare state that can meet the challenges posed by an aging population.
 
-```{latex}
-\begin{flbox}
-```
-
-```{proposition demo-pyramid, echo = TRUE, name='Tool: the population pyramid'}
+:::: {.flbox data-latex=""}
+::: {.proposition #demo-pyramid name="Tool: the population pyramid"}
 \index{Population pyramid}
 
 A population pyramid is a dual-axis chart that uses an arithmetic scale on each axis.
@@ -256,11 +253,8 @@ To make a systematic and comprehensive reading of a pyramid, one can proceed in 
     + Build a general explanation for the pyramid's bulges and bites (if any) using your knowledge of the country's history.
     + Predict the future evolution of the population from the observed structure.
 
-```
-
-```{latex}
-\end{flbox}
-```
+:::
+::::
 
 ### The Migration Transition
 
