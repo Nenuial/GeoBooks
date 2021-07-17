@@ -1681,10 +1681,10 @@
     },
     "sf": {
       "Package": "sf",
-      "Version": "1.0-1",
+      "Version": "1.0-0",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "559b46e3609f1b0dbcf9eada54fb6ee0"
+      "Hash": "800804f284ba87cb28cf24fc47fc4e02"
     },
     "shiny": {
       "Package": "shiny",
