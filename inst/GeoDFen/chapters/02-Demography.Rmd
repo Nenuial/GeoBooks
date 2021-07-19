@@ -294,7 +294,11 @@ In his essay, Malthus expresses concern about the evolution of the world populat
 The birth control policy implemented in China is certainly the most famous in the world. The name given to this policy, however, is misleading; Indeed, the policy implemented by the communist government is much more complex than just "one-child per couple". To understand the evolution of the demographic policy of China we must go back in time and look at the events in China since the Second World War.
 
 ```{r demo-china-trends, opts.label='geo.graph', fig.height=12, fig.cap="China's demographic trends."}
-geographer::gph_demogram("China", geovizr::gvz_doc_theme())
+if (knitr::is_html_output()) {
+  geographer::gph_highcharter_demogram("China")
+} else if (knitr::is_latex_output()) {
+  geographer::gph_demogram("China", geovizr::gvz_doc_theme())
+}
 ```
 \index{China!Population trends}
 
