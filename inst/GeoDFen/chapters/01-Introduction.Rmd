@@ -26,9 +26,9 @@ The first to define Geography as a field of study, as far as we know, are the Gr
 
 ## The Greco-Roman Period
 
-The word *Geography* is often attributed to the Greek scholar Eratosthenes. Eratosthenes's (ca. 275-195 <span style="font-variant:small-caps;">bce</span>) interest is in the world around him. Using an ingenious method, he measured the Earth's circumference. He also invented a geographic coordinate system allowing him to map the known world.
+The word *Geography* is often attributed to the Greek scholar Eratosthenes. Eratosthenes's (ca. 275-195 [bce]{.smallcaps}) interest is in the world around him. Using an ingenious method, he measured the Earth's circumference. He also invented a geographic coordinate system allowing him to map the known world.
 
-A few centuries later, Ptolemy (ca. 90-168 <span style="font-variant:small-caps;">ce</span>) expanded on Eratosthenes work and developed new cartography tools. Among other things, he created the first map projection: a process that allows the transfer of points on a three-dimensional globe onto a two-dimensional map.
+A few centuries later, Ptolemy (ca. 90-168 [ce]{.smallcaps}) expanded on Eratosthenes work and developed new cartography tools. Among other things, he created the first map projection: a process that allows the transfer of points on a three-dimensional globe onto a two-dimensional map.
 
 ## The Renaissance of Geography
 

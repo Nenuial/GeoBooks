@@ -180,7 +180,7 @@ Composite index calculated using the following parameters:
 ## World population trends
 \index{Population trends!World}
 
-The figure \@ref(fig:demo-world-pop-plots) shows how the world population has evolved since 10'000 <span style="font-variant:small-caps;">bce</span>. Population only started to grow when mankind became sedentary and agriculture begins offering surpluses. The second big change in population trend occurs at the end of the 18^th^ Century.
+The figure \@ref(fig:demo-world-pop-plots) shows how the world population has evolved since 10'000 [bce]{.smallcaps}. Population only started to grow when mankind became sedentary and agriculture begins offering surpluses. The second big change in population trend occurs at the end of the 18^th^ Century.
 
 This second change in trend is brought by the Industrial Revolution.  Important changes in lifestyle and hygiene allow for a better life. The Medical discoveries made at the beginning of the 20^th^ Century improved life expectancy in developed countries. Initially, this development will cause an extremely rapid increase in population. In two centuries, the world population increased from less than one billion to over 6 billion people on Earth.
 

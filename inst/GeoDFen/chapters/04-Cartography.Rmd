@@ -16,9 +16,9 @@ nocite: |
 
 ## The first maps
 
-There are many different prehistoric maps and it is difficult to say which one is the oldest. The petroglyph of Bedolina is a possible candidate (see chapter image). It's an engraved rock showing what could be a map of the surroundings village. Some parts probably date back to the end of the Bronze Age (3000-1000 <span style="font-variant:small-caps;">bce</span>). It isn't certain that the depiction is an actual map or just an artist's creation.
+There are many different prehistoric maps and it is difficult to say which one is the oldest. The petroglyph of Bedolina is a possible candidate (see chapter image). It's an engraved rock showing what could be a map of the surroundings village. Some parts probably date back to the end of the Bronze Age (3000-1000 [bce]{.smallcaps}). It isn't certain that the depiction is an actual map or just an artist's creation.
 
-The Babylonian map of the World (see figure \@ref(fig:carto-babylonian-world-map)) is the oldest map of the "world". It shows the known world from the perspective of the Babylonians. It probably dates back to the 5^th^ Century <span style="font-variant:small-caps;">bce</span>. The representation on the map is most likely partly mythological (edges of the map). The stone slab also features a text that explains the different elements shown on the map.
+The Babylonian map of the World (see figure \@ref(fig:carto-babylonian-world-map)) is the oldest map of the "world". It shows the known world from the perspective of the Babylonians. It probably dates back to the 5^th^ Century [bce]{.smallcaps}. The representation on the map is most likely partly mythological (edges of the map). The stone slab also features a text that explains the different elements shown on the map.
 
 (ref:carto-babylonian-world-map-cap) The Babylonian Map of the World. Source: [Wikimedia](https://commons.wikimedia.org/wiki/File:The_Babylonian_map_of_the_world,_from_Sippar,_Mesopotamia..JPG).
 
