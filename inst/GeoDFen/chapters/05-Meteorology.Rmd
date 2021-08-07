@@ -104,9 +104,8 @@ Because of the Coriolis force the surface winds are generally easterlies in the 
 ```{r meteo-global-atmospheric-circulation, opts.label='geo.tikz', fig.cap='The global atmospheric circulation'}
 ```
 
-:::: {.flbox data-latex=""}
-::: {.proposition #meteo-coriolis-box name="Concept: The Coriolis force"}
-
+::::{.flbox data-latex=""}
+:::{.proposition #meteo-coriolis-box name="Concept: The Coriolis force"}
 The Coriolis force is an apparent force due to the rotation of our planet. When we consider the movement of the objects on our planet, we do so from the perspective of a rotating frame of reference (we are, ourselves, on the surface of a rotating sphere). Therefore the objects "appear" to be deflected.
 
 ```{r meteo-coriolis, opts.label='geo.tikz', out.width='60%', fig.align='center'}
@@ -121,7 +120,6 @@ The Coriolis force is expressed as follows:
 $$F_{c} = 2m\cdot \Omega \cdot \sin (\varphi) \cdot v$$
 
 Where $\Omega$ is the angular speed of Earth, $\varphi$ the latitude. The strength of the Coriolis force depends on the mass, the latitude and the speed of the movement. The closer to the equator, the weaker the Coriolis force.
-
 :::
 ::::
 
@@ -212,8 +210,8 @@ temperature at which saturation occurs (see box \@ref(prp:meteo-dew-point-box)).
 
 
 
-:::: {.flbox data-latex=""}
-::: {.proposition #meteo-dew-point-box name="Concept: The Dew point"}
+::::{.flbox data-latex=""}
+:::{.proposition #meteo-dew-point-box name="Concept: The Dew point"}
 
 The dew point is a common measure for water vapour used in meteorology. The dew point expresses the temperature at which a certain mass of air reaches saturation. Indirectly this tells us the absolute amount of water vapour present. The dew point can never be above the current air temperature. If the temperature drops below the dew point, water condenses and the dew point drops with the air temperature as water vapour is lost.
 

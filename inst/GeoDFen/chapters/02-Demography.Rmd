@@ -214,11 +214,10 @@ The Fertility Transition sometimes precedes the Health and Mortality Transition,
 
 The first two transitions inevitably result in an ageing population. This transition is easily observed using a population pyramid (see box \@ref(prp:demo-pyramid)). This transition generates a demographic pressure that inevitably leads to social changes. These changes often involved a move towards a welfare state that can meet the challenges posed by an aging population.
 
-:::: {.flbox data-latex=""}
-::: {.proposition #demo-pyramid name="Tool: the population pyramid"}
-\index{Population pyramid}
-
+::::{.flbox data-latex=""}
+:::{.proposition #demo-pyramid name="Tool: the population pyramid"}
 A population pyramid is a dual-axis chart that uses an arithmetic scale on each axis.
+\index{Population pyramid}
 
 - The **vertical axis** features age groups with *sometimes*, for convenience, the corresponding birth year.
 - The **horizontal axis** is the population. Generally expressed in millions, but sometimes as a percentage of the total population in order to facilitate the comparison of populations of different sizes.
@@ -236,23 +235,24 @@ This type of chart is used for all kinds of populations - active population, imm
 To make a systematic and comprehensive reading of a pyramid, one can proceed in stages:
 
 1. Identify the basic elements
-    + Which continent, region, country?
-    + What year?
-    + What classification age groups?
-    + What units?
+   + Which continent, region, country?
+   + What year?
+   + What classification age groups?
+   + What units?
 1. Recognise the pyramid's form
-    + What is the pyramid's form?
-    + Is it regular or irregular?
-    + Are there bulges and bites?
-    + Is it symmetric or asymmetric?
+   + What is the pyramid's form?
+   + Is it regular or irregular?
+   + Are there bulges and bites?
+   + Is it symmetric or asymmetric?
 1. Formulate hypotheses
-    + Try to explain the bulges and bites: increase or decrease in births. What could they mean?
-    + If there are asymmetries try to explain them. Difference in life expectancy? War?
+   + Try to explain the bulges and bites: increase or decrease in births. What could they mean?
+   + If there are asymmetries try to explain them. Difference in life expectancy? War?
 1. Interpret the pyramid
-    + Recognise the form of the pyramid and try to link it with a phase of the demographic transition model.
-    + Build a general explanation for the pyramid's bulges and bites (if any) using your knowledge of the country's history.
-    + Predict the future evolution of the population from the observed structure.
+   + Recognise the form of the pyramid and try to link it with a phase of the demographic transition model.
+   + Build a general explanation for the pyramid's bulges and bites (if any) using your knowledge of the country's history.
+   + Predict the future evolution of the population from the observed structure.
 
+The resulting analysis gives a comprehensive picture of the population structure of a country.
 :::
 ::::
 

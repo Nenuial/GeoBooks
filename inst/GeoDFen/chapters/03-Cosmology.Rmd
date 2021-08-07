@@ -20,13 +20,13 @@ At the beginning of the 20^th^ century the ever-better telescopes allowed astron
 
 It is a Belgian Priest, Father Georges Lemaître who first proposed a theory of a Universe that originated with the "Blast of Giant Atom". Without knowing about Hubble's observation, Lemaître working with Einstein's equations of general relativity formulated the basis of what would later become the *theory of the Big Bang* [@perricone_big_2009, pp. 19-22].
 
-:::: {.flbox data-latex=""}
-::: {.proposition #cosmo-redshift name="Concept: Redshift"}
-\index{Redshift}
+::::{.flbox data-latex=""}
+:::{.proposition #cosmo-redshift name="Concept: Redshift"}
 When an ambulance comes towards you, the siren has a higher pitch than when that ambulance passes you by and moves away from you. The pitch of the siren goes from high to low.
-		
-\index{Doppler effect}
+\index{Redshift}
+
 This change of pitch is called the **doppler effect**. When the ambulance comes towards you the sound of the siren travels faster. The wavelengths are compressed (see figure below) and the sound has a higher pitch. When the ambulance moves away it's the opposite effect.
+\index{Doppler effect}
 
 ```{r doppler-effect, opts.label='fig', out.width="80%", fig.align='center'}
 knitr::include_graphics("../Resources/pictures/Cosmology/1_doppler_effect.png")
@@ -35,7 +35,6 @@ knitr::include_graphics("../Resources/pictures/Cosmology/1_doppler_effect.png")
 *The doppler effect*^[Source: [Wikimedia](https://commons.wikimedia.org/wiki/File:Doppler_effect_diagrammatic.png).]
 
 Something similar was observed by astronomer Edwin Hubble in the 1920s. When studying the lights from other galaxies he observed that almost all of them appear to be shifted towards the red end of the light spectrum. This effect was called the **redshift**. He realised that the galaxies that are the furthest away from us are the ones moving away at the highest speed [@perricone_big_2009, pp. 16-18].
-
 :::
 ::::
 
