@@ -2,5 +2,9 @@ geovizr::gvz_bs4_book:
   copy_resources: true
   theme:
     primary: "#0F2D61"
+  repo:
+    base: https://github.com/Nenuial/GeoBooks
+    branch: main
+    subdir: inst/GeoDFen
 geovizr::gvz_book:
   keep_tex: true
