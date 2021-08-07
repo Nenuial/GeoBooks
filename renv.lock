@@ -268,6 +268,18 @@
       "Repository": "CRAN",
       "Hash": "b7d8d8ee39869c18d8846a184dd8a1af"
     },
+    "bookdown": {
+      "Package": "bookdown",
+      "Version": "0.22.17",
+      "Source": "GitHub",
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteRepo": "bookdown",
+      "RemoteUsername": "rstudio",
+      "RemoteRef": "HEAD",
+      "RemoteSha": "9615b149e0df4c7fbbaccaa43667dc2475b10a1d",
+      "Hash": "edd591fc168477fd2488c560ac4d33c3"
+    },
     "boot": {
       "Package": "boot",
       "Version": "1.3-28",
@@ -838,10 +850,15 @@
     },
     "highcharter": {
       "Package": "highcharter",
-      "Version": "0.8.2",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "0058e6db360b4131c268f8148df229c9"
+      "Version": "0.8.2.9000",
+      "Source": "GitHub",
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteRepo": "highcharter",
+      "RemoteUsername": "jbkunst",
+      "RemoteRef": "HEAD",
+      "RemoteSha": "f70f8e8982f276b0ed7ae63eeb47f3f1fbdb96aa",
+      "Hash": "b658b9c06c7c477e5550bc3eac32fbe7"
     },
     "highr": {
       "Package": "highr",
@@ -978,10 +995,15 @@
     },
     "knitr": {
       "Package": "knitr",
-      "Version": "1.33",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "0bc1b5da1b0eb07cd4b727e95e9ff0b8"
+      "Version": "1.33.7",
+      "Source": "GitHub",
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteRepo": "knitr",
+      "RemoteUsername": "yihui",
+      "RemoteRef": "HEAD",
+      "RemoteSha": "ab0e4a1d9138e049db671ce91b0253e91ff1dfd3",
+      "Hash": "21b7f13c0d92f70153074326195dc48f"
     },
     "ks": {
       "Package": "ks",
@@ -1573,10 +1595,10 @@
     },
     "rsconnect": {
       "Package": "rsconnect",
-      "Version": "0.8.24",
+      "Version": "0.8.18",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "5e21fd77eb844fa1ff1d23cb04e1d753"
+      "Hash": "50b4e52011e335f7d3053cfde69893ba"
     },
     "rstan": {
       "Package": "rstan",
