@@ -89,7 +89,7 @@ $RNI = CBR - CDR$
 ```
 
 ```{example demo-rni-example, echo=TRUE}
-Switzerland had an RNI of 17.6‰ in 2015.^[Source: [OFS](http://www.bfs.admin.ch/bfs/portal/fr/index/themen/01/06/blank/key/01.html).]
+Switzerland had an RNI of 1.1‰ in 2019.^[Source: [OFS](https://www.bfs.admin.ch/bfs/fr/home/statistiques/population/naissances-deces.html).]
 ```
 
 \noindent The total fertility rate (TFR) is an indicator that is frequently used to express the population changes of a country. Despite its name, it is a number and not a rate ! The replacement fertility rate is the TFR needed so that women have just enough babies to replace themselves. The minimum replacement fertility rate is roughly 2.1.
