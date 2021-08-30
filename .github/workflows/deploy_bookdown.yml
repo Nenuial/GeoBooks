@@ -41,19 +41,10 @@ jobs:
       - name: Adding RNOAA API KEY
         run: echo "${{ secrets.R_NOAA_KEY }}" >> ~/.rprofile
 
-      - name: Cache packages
-        uses: actions/cache@v1
+      - name: Install R packages
+        uses: r-lib/actions/setup-r-dependencies@v1
         with:
-          path: ${{ env.RENV_PATHS_ROOT }}
-          key: ${{ runner.os }}-renv-${{ hashFiles('**/renv.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-renv-
-
-      - name: Restore packages
-        shell: Rscript {0}
-        run: |
-          if (!requireNamespace("renv", quietly = TRUE)) install.packages("renv")
-          renv::restore()
+          cache-version: 210801
 
       - name: Install FiraSans and FiraMath
         run: Rscript -e 'geovizr::gvz_install_fonts_macos(system_wide = TRUE)'
