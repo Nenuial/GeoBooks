@@ -88,10 +88,10 @@
     },
     "R6": {
       "Package": "R6",
-      "Version": "2.5.1",
+      "Version": "2.5.0",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "470851b6d5d0ac559e9d01bb352b4021"
+      "Hash": "b203113193e70978a696b2809525649d"
     },
     "RColorBrewer": {
       "Package": "RColorBrewer",
@@ -102,10 +102,10 @@
     },
     "RCurl": {
       "Package": "RCurl",
-      "Version": "1.98-1.4",
+      "Version": "1.98-1.3",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "e43588d9fa3aa87ca9ee96450e810895"
+      "Hash": "ddac9abbfba243f9aeab9b5680b968d3"
     },
     "Rcpp": {
       "Package": "Rcpp",
@@ -193,10 +193,10 @@
     },
     "XML": {
       "Package": "XML",
-      "Version": "3.99-0.7",
+      "Version": "3.99-0.6",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "09776593e3e9d555fbd10fe98781103a"
+      "Hash": "59b7d0a3d18303ae30ba1246e77faa83"
     },
     "abind": {
       "Package": "abind",
@@ -270,10 +270,15 @@
     },
     "bookdown": {
       "Package": "bookdown",
-      "Version": "0.23",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "bc07f4b5b93bbf21075429e0c7e090f8"
+      "Version": "0.22.17",
+      "Source": "GitHub",
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteRepo": "bookdown",
+      "RemoteUsername": "rstudio",
+      "RemoteRef": "HEAD",
+      "RemoteSha": "9615b149e0df4c7fbbaccaa43667dc2475b10a1d",
+      "Hash": "edd591fc168477fd2488c560ac4d33c3"
     },
     "boot": {
       "Package": "boot",
@@ -305,10 +310,10 @@
     },
     "cachem": {
       "Package": "cachem",
-      "Version": "1.0.6",
+      "Version": "1.0.5",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "648c5b3d71e6a37e3043617489a0a0e9"
+      "Hash": "5346f76a33eb7417812c270b04a5581b"
     },
     "callr": {
       "Package": "callr",
@@ -711,21 +716,20 @@
       "Package": "geovizr",
       "Version": "0.1.0",
       "Source": "GitHub",
-      "Remotes": "gadenbuie/tweetrmd",
       "RemoteType": "github",
       "RemoteHost": "api.github.com",
       "RemoteRepo": "geovizr",
       "RemoteUsername": "Nenuial",
       "RemoteRef": "HEAD",
-      "RemoteSha": "3d4f38857b01333b7a6f55e61bb1f842a6c0e1af",
-      "Hash": "0f429e007318dd7cc5d2caf8d2e019b0"
+      "RemoteSha": "c3af38bd59cd7892e42e9648badc97ac7df0f2d5",
+      "Hash": "07fa26b32ce7fc082f69aae5ac653786"
     },
     "gert": {
       "Package": "gert",
-      "Version": "1.3.2",
+      "Version": "1.3.1",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "72b34cde959b806e86cb99fc12d1ba58"
+      "Hash": "8612346a70ca2b2bebb0ef008d5c0e30"
     },
     "ggeo": {
       "Package": "ggeo",
@@ -893,10 +897,10 @@
     },
     "httpuv": {
       "Package": "httpuv",
-      "Version": "1.6.2",
+      "Version": "1.6.1",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "a42959b003aad9fc351b10250c5a6b77"
+      "Hash": "54344a78aae37bc6ef39b1240969df8e"
     },
     "httr": {
       "Package": "httr",
@@ -1017,10 +1021,10 @@
     },
     "later": {
       "Package": "later",
-      "Version": "1.3.0",
+      "Version": "1.2.0",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "7e7b457d7766bc47f2a5f21cc2984f8e"
+      "Hash": "b61890ae77fea19fc8acadd25db70aa4"
     },
     "lattice": {
       "Package": "lattice",
@@ -1115,10 +1119,10 @@
     },
     "magick": {
       "Package": "magick",
-      "Version": "2.7.3",
+      "Version": "2.7.2",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "56fbad418aa50939ed8c3028126af8d7"
+      "Hash": "db36bbb91bf293f0550c51ecbf6f1928"
     },
     "magrittr": {
       "Package": "magrittr",
@@ -1269,10 +1273,10 @@
     },
     "packrat": {
       "Package": "packrat",
-      "Version": "0.7.0",
+      "Version": "0.6.0",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "95e8c3825efcaad09411799da92c0af9"
+      "Hash": "0d6cc4c357e7602bb3eee299f4cfc2a5"
     },
     "paletteer": {
       "Package": "paletteer",
@@ -1486,10 +1490,10 @@
     },
     "readr": {
       "Package": "readr",
-      "Version": "2.0.1",
+      "Version": "2.0.0",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "34807ea4fb5900386ddef904eef8bdb8"
+      "Hash": "849038f0839134ab35e719a9820005a6"
     },
     "readxl": {
       "Package": "readxl",
@@ -1591,10 +1595,10 @@
     },
     "rsconnect": {
       "Package": "rsconnect",
-      "Version": "0.8.24",
+      "Version": "0.8.18",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "5e21fd77eb844fa1ff1d23cb04e1d753"
+      "Hash": "50b4e52011e335f7d3053cfde69893ba"
     },
     "rstan": {
       "Package": "rstan",
@@ -1794,10 +1798,10 @@
     },
     "survival": {
       "Package": "survival",
-      "Version": "3.2-12",
+      "Version": "3.2-11",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "dcdc241a75d17656fec8d02cd8215c39"
+      "Hash": "f4d706b25d640dbaeb56d9c9b6ce9a22"
     },
     "svglite": {
       "Package": "svglite",
@@ -1815,10 +1819,10 @@
     },
     "sysfonts": {
       "Package": "sysfonts",
-      "Version": "0.8.5",
+      "Version": "0.8.4",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "d5e2db91a3aa1ac242a6edb6b2093eb5"
+      "Hash": "f31895bc2974cf01b8f1865c6b8d0e63"
     },
     "systemfonts": {
       "Package": "systemfonts",
@@ -1916,19 +1920,6 @@
       "Repository": "CRAN",
       "Hash": "fe2d17ca3a40b69c53c6712cf4dd35ce"
     },
-    "tweetrmd": {
-      "Package": "tweetrmd",
-      "Version": "0.0.9",
-      "Source": "GitHub",
-      "Remotes": "rstudio/webshot2",
-      "RemoteType": "github",
-      "RemoteHost": "api.github.com",
-      "RemoteRepo": "tweetrmd",
-      "RemoteUsername": "gadenbuie",
-      "RemoteRef": "HEAD",
-      "RemoteSha": "075102b6a02fa4ea26741a9db7ca8afd728350a1",
-      "Hash": "1a923da23a8fd1f1361c46845aaf8452"
-    },
     "tzdb": {
       "Package": "tzdb",
       "Version": "0.1.2",
@@ -1945,10 +1936,10 @@
     },
     "unpivotr": {
       "Package": "unpivotr",
-      "Version": "0.6.2",
+      "Version": "0.6.1",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "b839453229564218a2c0199b86dde6de"
+      "Hash": "9926b1bcf0b8f907b5c1b1dd922875bd"
     },
     "urca": {
       "Package": "urca",
