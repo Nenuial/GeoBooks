@@ -47,7 +47,7 @@ jobs:
           cache-version: 210801
 
       - name: Install FiraSans and FiraMath
-        run: Rscript -e 'geovizr::gvz_install_fonts_macos(system_wide = TRUE)'
+        run: Rscript -e 'ggeo::ggeo_install_fonts_macos(system_wide = TRUE)'
 
 
       - name: Build GuideTM
