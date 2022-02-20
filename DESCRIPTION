@@ -9,7 +9,7 @@ Description: This package serves as a container for my different
 License: CC0
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.1.1
+RoxygenNote: 7.1.2
 Imports: 
     bookdown,
     geographer,
