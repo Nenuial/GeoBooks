@@ -19,11 +19,11 @@ La Wikipedia est une mine d'informations d'ordre général. **Un article de la W
 Même si de nombreuses informations sont aujourd'hui accessibles en ligne, une recherche d'ouvrages *papier* est incontournable. Quelques bonnes pistes pour débuter vos recherches:
 
 - Catalogue de la bibliothèque du LDDR:  
-    <http://netbiblio2.rpn.ch/neuc-lddr/>
+    <http://netbiblio2.rpn.ch/neuc-lddr>
 - Catalogue des bibliothèques publiques romandes:  
-    <https://explore.rero.ch/>
+    <https://bib.rero.ch>
 - Catalogue des bibliothèques universitaires suisses:  
-    <https://swisscovery.slsp.ch/>
+    <https://swisscovery.slsp.ch>
 - Google Books:  
     <https://books.google.ch>
 - Google Scholar:  
